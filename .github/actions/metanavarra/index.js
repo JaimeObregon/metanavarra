@@ -58,13 +58,13 @@ async function run() {
     })
 
     const text = names.join(', ') + ' ' + new Date().toString()
+    // const response2 = await client.v2.post('tweets', { text })
 
     const res = await fetch(
       'https://dd2cgqlmnwvp5.cloudfront.net/avatar_generic_bodies/rpm_male_tshirt/thumbnail.png'
     )
 
     if (!res.ok) {
-      console.log('!res.ok')
     }
 
     const arrayBuffer = await res.arrayBuffer()
@@ -74,7 +74,7 @@ async function run() {
       client.v1.uploadMedia(buffer, { mimeType: 'image/x-png' }),
     ])
 
-    const response2 = await client.v2.post('tweets', { text, media_ids })
+    await client.v1.tweet(text, { media_ids })
   } catch (error) {
     core.setFailed(error.message)
   }

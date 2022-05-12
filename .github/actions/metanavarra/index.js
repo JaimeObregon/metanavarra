@@ -71,7 +71,7 @@ async function run() {
     const buffer = Buffer.from(arrayBuffer)
 
     const media_ids = await Promise.all([
-      client.v1.uploadMedia(buffer, { type: 'png' }),
+      client.v1.uploadMedia(buffer, { mimeType: 'image/x-png' }),
     ])
 
     await client.v1.tweet(text, { media_ids })

@@ -73,9 +73,7 @@ async function run() {
     ${new Date().toString()}`
     // const response2 = await client.v2.post('tweets', { text })
 
-    const res = await fetch(
-      'https://dd2cgqlmnwvp5.cloudfront.net/avatar_generic_bodies/rpm_male_tshirt/thumbnail.png'
-    )
+    const res = await fetch(activeParticipants.profilePicURL)
 
     if (!res.ok) {
     }

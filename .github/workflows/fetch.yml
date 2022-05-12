@@ -27,6 +27,6 @@ jobs:
           timestamp=$(date -u)
           git commit -am "Actualización del ${timestamp}"
       - name: …y hace el «push»
-          uses: ad-m/github-push-action@master
-          with:
-            github_token: ${{ secrets.token }}
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.token }}

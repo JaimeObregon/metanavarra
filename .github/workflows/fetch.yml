@@ -30,7 +30,7 @@ jobs:
         with:
           github_token: ${{ secrets.token }}
       - name: Y lo casca en Twitter
-        uses: JaimeObregon/why-don-t-you-tweet@v1
+        uses: JaimeObregon/why-don-t-you-tweet
         with:
           tweet-message: "¡Hola, mundo!"
         env:

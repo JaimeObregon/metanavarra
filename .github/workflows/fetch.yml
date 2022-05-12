@@ -29,13 +29,11 @@ jobs:
         with:
           github_token: ${{ secrets.token }}
       - name: Y lo casca en Twitter
-        uses: snow-actions/tweet@v1.2.0
+        uses: Eomm/why-don-t-you-tweet@v1
         with:
-          status: |
-            ¡Hola, mundo! :D ${{ github.event.release.name }}
-            ${{ github.event.release.html_url }}
+          tweet-message: "¡Hola, mundo!"
         env:
-          CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
-          CONSUMER_API_SECRET_KEY: ${{ secrets.TWITTER_CONSUMER_API_SECRET_KEY }}
-          ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          TWITTER_CONSUMER_API_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}

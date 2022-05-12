@@ -54,7 +54,7 @@ async function run() {
       accessSecret: accessTokenSecret,
     })
 
-    const text = names.join(', ') + new Date().toString()
+    const text = names.join(', ') + ' ' + new Date().toString()
     const response2 = await client.v2.post('tweets', { text })
   } catch (error) {
     core.setFailed(error.message)

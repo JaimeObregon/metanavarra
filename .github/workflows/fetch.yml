@@ -1,9 +1,8 @@
 name: De paseo por el metaverso
 
 on:
-  push:
-  # schedule:
-  #   - cron: "*/5 * * * *"
+  schedule:
+    - cron: "*/5 * * * *"
 
 jobs:
   check:

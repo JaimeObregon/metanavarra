@@ -31,8 +31,6 @@ jobs:
           github_token: ${{ secrets.TOKEN }}
       - name: Y lo casca en Twitter
         uses: LuisAlejandro/send-tweet-with-media@0.2.0
-        with:
-          tweet-message: "¡Hola, mundo!"
         env:
           TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}

@@ -8695,14 +8695,6 @@ module.exports = require("assert");
 
 /***/ }),
 
-/***/ 4300:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("buffer");
-
-/***/ }),
-
 /***/ 6113:
 /***/ ((module) => {
 
@@ -8751,102 +8743,6 @@ module.exports = require("net");
 
 /***/ }),
 
-/***/ 2254:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:buffer");
-
-/***/ }),
-
-/***/ 7561:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:fs");
-
-/***/ }),
-
-/***/ 8849:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:http");
-
-/***/ }),
-
-/***/ 2286:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:https");
-
-/***/ }),
-
-/***/ 7503:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:net");
-
-/***/ }),
-
-/***/ 9411:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:path");
-
-/***/ }),
-
-/***/ 7742:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:process");
-
-/***/ }),
-
-/***/ 4492:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:stream");
-
-/***/ }),
-
-/***/ 2477:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:stream/web");
-
-/***/ }),
-
-/***/ 1041:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:url");
-
-/***/ }),
-
-/***/ 7261:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:util");
-
-/***/ }),
-
-/***/ 5628:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:zlib");
-
-/***/ }),
-
 /***/ 2037:
 /***/ ((module) => {
 
@@ -8863,6 +8759,22 @@ module.exports = require("path");
 
 /***/ }),
 
+/***/ 5477:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("punycode");
+
+/***/ }),
+
+/***/ 2781:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("stream");
+
+/***/ }),
+
 /***/ 4404:
 /***/ ((module) => {
 
@@ -8871,19 +8783,19 @@ module.exports = require("tls");
 
 /***/ }),
 
+/***/ 7310:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("url");
+
+/***/ }),
+
 /***/ 3837:
 /***/ ((module) => {
 
 "use strict";
 module.exports = require("util");
-
-/***/ }),
-
-/***/ 1267:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("worker_threads");
 
 /***/ }),
 
@@ -8931,6 +8843,36 @@ module.exports = require("zlib");
 /******/ 	__nccwpck_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	(() => {
+/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__nccwpck_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
+/******/ 			}
+/******/ 			var ns = Object.create(null);
+/******/ 			__nccwpck_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
+/******/ 			}
+/******/ 			def['default'] = () => (value);
+/******/ 			__nccwpck_require__.d(ns, def);
+/******/ 			return ns;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -9036,7 +8978,7 @@ var __webpack_exports__ = {};
 
 
 const fetch = (...args) =>
-  __nccwpck_require__.e(/* import() */ 321).then(__nccwpck_require__.bind(__nccwpck_require__, 7321)).then(({ default: fetch }) => fetch(...args))
+  __nccwpck_require__.e(/* import() */ 885).then(__nccwpck_require__.t.bind(__nccwpck_require__, 8885, 23)).then(({ default: fetch }) => fetch(...args))
 
 function getInput(name, { mandatory, defaultValue } = {}) {
   const input = core.getInput(name) || defaultValue

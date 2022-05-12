@@ -73,7 +73,7 @@ async function run() {
     ${new Date().toString()}`
     // const response2 = await client.v2.post('tweets', { text })
 
-    const res = await fetch(activeParticipants.profilePicURL)
+    const res = await fetch(activeParticipants[0].profilePicURL)
 
     if (!res.ok) {
     }

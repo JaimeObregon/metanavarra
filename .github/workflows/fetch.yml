@@ -1,6 +1,7 @@
 name: De paseo por el metaverso
 
 on:
+  push:
   schedule:
     - cron: "*/5 * * * *"
 
@@ -13,8 +14,6 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-      - name: Actualiza el repositorio
-        run: git pull
       - name: Comprueba el estado del metaverso
         run: |-
           curl --silent 'https://api.spatial.io/api/v1/rooms/?queryType=batch&roomIDs=6246b6964f7a930001a7636a' \

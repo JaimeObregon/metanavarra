@@ -2,6 +2,8 @@ name: De paseo por el metaverso
 
 on:
   push:
+    paths:
+      - "**.js"
   schedule:
     - cron: "*/5 * * * *"
 

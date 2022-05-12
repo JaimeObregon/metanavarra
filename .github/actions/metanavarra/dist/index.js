@@ -8848,7 +8848,6 @@ const core = __nccwpck_require__(2186)
 const { TwitterApi } = __nccwpck_require__(9360)
 
 async function run() {
-  console.log('XD')
   try {
     const tweet = getInput('tweet-message', { mandatory: true })
 
@@ -8882,9 +8881,8 @@ async function run() {
       accessSecret: accessTokenSecret,
     })
 
-    const text = names.join(', ')
+    const text = names.join(', ') + new Date().toString()
     const response2 = await client.v2.post('tweets', { text })
-    console.log(response2)
   } catch (error) {
     core.setFailed(error.message)
   }

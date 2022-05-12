@@ -21,7 +21,6 @@ const core = require('@actions/core')
 const { TwitterApi } = require('twitter-api-v2')
 
 async function run() {
-  console.log('XD')
   try {
     const tweet = getInput('tweet-message', { mandatory: true })
 
@@ -55,9 +54,8 @@ async function run() {
       accessSecret: accessTokenSecret,
     })
 
-    const text = names.join(', ')
+    const text = names.join(', ') + new Date().toString()
     const response2 = await client.v2.post('tweets', { text })
-    console.log(response2)
   } catch (error) {
     core.setFailed(error.message)
   }

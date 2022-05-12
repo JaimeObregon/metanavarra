@@ -4,11 +4,7 @@
   "description": "Tweet your GitHub events!",
   "main": "index.js",
   "scripts": {
-    "lint:fix": "standard --fix",
-    "lint": "standard",
-    "prepare": "husky install",
-    "build": "ncc build index.js -o dist --license licenses.txt",
-    "test": "npm run lint && tap test/*.test.js"
+    "build": "ncc build index.js -o dist"
   },
   "repository": {
     "type": "git",

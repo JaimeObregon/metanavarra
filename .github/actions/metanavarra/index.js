@@ -33,8 +33,8 @@ async function run() {
     const json_before = JSON.parse(before)
     const json = JSON.parse(response)
 
-    const { activeParticipants_before } = json.rooms[0]
-    const { activeParticipants } = json.rooms[0]
+    const activeParticipants_before = json_before.rooms[0].activeParticipants
+    const activeParticipants = json.rooms[0].activeParticipants
 
     const names_before = activeParticipants_before.map(
       (participant) => participant.displayName || 'Anónimo'

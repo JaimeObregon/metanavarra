@@ -1,0 +1,21 @@
+{
+  "name": "metanavarra",
+  "version": "1.0.0",
+  "description": "…",
+  "scripts": {
+    "build": "cd .github/actions/metanavarra && ncc build index.js -o dist"
+  },
+  "author": "Jaime Gómez-Obregón",
+  "dependencies": {
+    "@actions/core": "^1.8.0",
+    "tunnel": "^0.0.6",
+    "twitter-api-v2": "^1.12.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.33.4"
+  }
+}

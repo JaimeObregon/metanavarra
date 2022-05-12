@@ -64,6 +64,7 @@ async function run() {
     )
 
     if (!res.ok) {
+      console.log('!res.ok')
     }
 
     const arrayBuffer = await res.arrayBuffer()

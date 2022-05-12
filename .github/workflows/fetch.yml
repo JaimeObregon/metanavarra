@@ -10,7 +10,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: Trae el repo
+      - name: Trae el repositorio
         uses: actions/checkout@v2
         with:
           persist-credentials: false
@@ -20,13 +20,22 @@ jobs:
           curl --silent 'https://api.spatial.io/api/v1/rooms/?queryType=batch&roomIDs=6246b6964f7a930001a7636a' \
           -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTI0MzU0NjYsImlhdCI6MTY1MjM0OTA2NiwiaXNzIjoiaHR0cHM6Ly9hcGkuc3BhdGlhbC5pbyIsIm5vYXV0aCI6dHJ1ZSwicm9vbWlkIjoiNjI0NmI3MDY0ZjdhOTMwMDAxYTc2Mzc1Iiwic3ViIjoibm9hdXRofDYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyIsInVpZCI6IjYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyJ9._i3CYUS4u3Nr8XJU__qJI0_87TUcf56ppLJF0fJsrhQ' \
           | jq > response.json
-      - name: Hace «commit»…
+      - name: Hace «commit»
         run: |-
           git config user.name "Metanavarra"
           git config user.email "actions@users.noreply.github.com"
           timestamp=$(date -u)
           git commit -am "Actualización del ${timestamp}"
-      - name: …y hace el «push»
+      - name: Hace el «push»
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.token }}
+      - name: Y lo casca en Twitter
+        uses: Eomm/why-don-t-you-tweet@v1
+        with:
+          tweet-message: "¡Hola, mundo!"
+        env:
+          TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          TWITTER_CONSUMER_API_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}

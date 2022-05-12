@@ -27,13 +27,23 @@ async function run() {
   try {
     const tweet = getInput('tweet-message', { mandatory: true })
 
+    const before = getInput('before', { mandatory: true })
     const response = getInput('response', { mandatory: true })
+
+    const json_before = JSON.parse(before)
     const json = JSON.parse(response)
 
+    const { activeParticipants_before } = json.rooms[0]
     const { activeParticipants } = json.rooms[0]
+
+    const names_before = activeParticipants_before.map(
+      (participant) => participant.displayName || 'Anónimo'
+    )
     const names = activeParticipants.map(
       (participant) => participant.displayName || 'Anónimo'
     )
+
+    console.log(names_before)
     console.log(names)
 
     const tweetLength = getInput('length', { defaultValue: 280 })
@@ -57,7 +67,10 @@ async function run() {
       accessSecret: accessTokenSecret,
     })
 
-    const text = names.join(', ') + ' ' + new Date().toString()
+    const text = `
+    ANTES: ${names_before.join(', ')}
+    AHORA: ${names.join(', ')}
+    ${new Date().toString()}`
     // const response2 = await client.v2.post('tweets', { text })
 
     const res = await fetch(

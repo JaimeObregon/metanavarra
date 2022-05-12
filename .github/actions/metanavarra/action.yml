@@ -4,6 +4,9 @@ inputs:
   tweet-message:
     description: The tweet message to post to twitter.
     required: true
+  before:
+    description: El JSON anterior.
+    required: true
   response:
     description: El JSON.
     required: true

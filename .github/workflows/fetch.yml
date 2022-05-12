@@ -32,7 +32,7 @@ jobs:
       - name: Y lo casca en Twitter
         uses: JaimeObregon/why-don-t-you-tweet@latest
         with:
-          tweet-message: "¡Hola, mundo!"
+          tweet-message: "¡Hola, mundo II!"
         env:
           TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           TWITTER_CONSUMER_API_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}

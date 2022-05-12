@@ -18,6 +18,9 @@ jobs:
           curl --silent 'https://api.spatial.io/api/v1/rooms/?queryType=batch&roomIDs=6246b6964f7a930001a7636a' \
           -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTI0MzU0NjYsImlhdCI6MTY1MjM0OTA2NiwiaXNzIjoiaHR0cHM6Ly9hcGkuc3BhdGlhbC5pbyIsIm5vYXV0aCI6dHJ1ZSwicm9vbWlkIjoiNjI0NmI3MDY0ZjdhOTMwMDAxYTc2Mzc1Iiwic3ViIjoibm9hdXRofDYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyIsInVpZCI6IjYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyJ9._i3CYUS4u3Nr8XJU__qJI0_87TUcf56ppLJF0fJsrhQ' \
           | jq > response.json
+      - name: Lee la salida
+        id: read
+        run: echo ::set-output name=response::$(cat response.json)
       - name: Hace «commit»
         run: |-
           git config user.name "Metanavarra"
@@ -31,7 +34,8 @@ jobs:
       - name: Y lo casca en Twitter
         uses: JaimeObregon/why-don-t-you-tweet@latest
         with:
-          tweet-message: "¡Hola, mundo II!"
+          response: ${{ steps.read.outputs.response }}
+          tweet-message: "¡Hola, mundo III!"
         env:
           TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           TWITTER_CONSUMER_API_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}

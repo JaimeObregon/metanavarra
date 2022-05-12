@@ -1,6 +1,7 @@
 name: De paseo por el metaverso
 
 on:
+  push:
   schedule:
     - cron: "*/5 * * * *"
 

@@ -33,7 +33,7 @@ jobs:
         with:
           github_token: ${{ secrets.token }}
       - name: Y lo casca en Twitter
-        uses: ./.github/actions/why-don-t-you-tweet
+        uses: ./.github/actions/metanavarra
         with:
           response: ${{ steps.read.outputs.response }}
           tweet-message: "¡Hola, mundo IV!"

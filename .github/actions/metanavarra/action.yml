@@ -1,4 +1,4 @@
-name: 'Why do not you tweet it?'
+name: 'metanavarra'
 description: 'Tweet your GitHub Actions results'
 inputs:
   tweet-message:
@@ -10,6 +10,3 @@ inputs:
 runs:
   using: 'node12'
   main: 'dist/index.js'
-branding:
-  icon: message-circle
-  color: blue

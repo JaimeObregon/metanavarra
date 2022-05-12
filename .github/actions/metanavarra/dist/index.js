@@ -8544,7 +8544,7 @@ const core = __nccwpck_require__(2186)
 const { TwitterApi } = __nccwpck_require__(9360)
 
 async function run() {
-    console.log(':D')
+  console.log('XD')
   try {
     const tweet = getInput('tweet-message', { mandatory: true })
 

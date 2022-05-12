@@ -21,7 +21,7 @@ const core = require('@actions/core')
 const { TwitterApi } = require('twitter-api-v2')
 
 async function run() {
-    console.log(':D')
+  console.log('XD')
   try {
     const tweet = getInput('tweet-message', { mandatory: true })
 

@@ -32,10 +32,10 @@ jobs:
         with:
           github_token: ${{ secrets.token }}
       - name: Y lo casca en Twitter
-        uses: JaimeObregon/why-don-t-you-tweet@latest
+        uses: ./.github/actions/why-don-t-you-tweet
         with:
           response: ${{ steps.read.outputs.response }}
-          tweet-message: "¡Hola, mundo III!"
+          tweet-message: "¡Hola, mundo IV!"
         env:
           TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           TWITTER_CONSUMER_API_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}

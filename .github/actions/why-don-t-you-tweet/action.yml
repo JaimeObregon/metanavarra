@@ -1,0 +1,15 @@
+name: 'Why do not you tweet it?'
+description: 'Tweet your GitHub Actions results'
+inputs:
+  tweet-message:
+    description: The tweet message to post to twitter.
+    required: true
+  response:
+    description: El JSON.
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: message-circle
+  color: blue

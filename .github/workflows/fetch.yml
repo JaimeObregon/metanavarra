@@ -28,13 +28,13 @@ jobs:
       - name: Hace el «push»
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.TOKEN }}
+          github_token: ${{ secrets.token }}
       - name: Y lo casca en Twitter
-        uses: LuisAlejandro/send-tweet-with-media@0.2.0
+        uses: Eomm/why-don-t-you-tweet@v1
+        with:
+          tweet-message: "¡Hola, mundo!"
         env:
-          TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
-          TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
-          TWITTER_OAUTH_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          TWITTER_OAUTH_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-          STATUS_TEXT: "Hi! I'm tweeting from Github actions using https://github.com/LuisAlejandro/send-tweet-with-media"
-          STATUS_IMAGE_URL_1: https://picsum.photos/1024/768
+          TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          TWITTER_CONSUMER_API_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}

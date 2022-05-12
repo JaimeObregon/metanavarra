@@ -1,6 +1,9 @@
 // @ts-nocheck
 'use strict'
 
+const fetch = (...args) =>
+  import('node-fetch').then(({ default: fetch }) => fetch(...args))
+
 function getInput(name, { mandatory, defaultValue } = {}) {
   const input = core.getInput(name) || defaultValue
   if (!input && mandatory === true) {
@@ -55,7 +58,23 @@ async function run() {
     })
 
     const text = names.join(', ') + ' ' + new Date().toString()
-    const response2 = await client.v2.post('tweets', { text })
+    // const response2 = await client.v2.post('tweets', { text })
+
+    const res = await fetch(
+      'https://dd2cgqlmnwvp5.cloudfront.net/avatar_generic_bodies/rpm_male_tshirt/thumbnail.png'
+    )
+
+    if (!res.ok) {
+    }
+
+    const arrayBuffer = await res.arrayBuffer()
+    const buffer = Buffer.from(arrayBuffer)
+
+    const media_ids = await Promise.all([
+      client.v1.uploadMedia(buffer, { type: 'png' }),
+    ])
+
+    await client.v1.tweet(text, { media_ids })
   } catch (error) {
     core.setFailed(error.message)
   }

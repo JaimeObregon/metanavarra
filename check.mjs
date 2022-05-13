@@ -254,3 +254,5 @@ try {
 } catch (error) {
   new Error(JSON.stringify(response))
 }
+
+console.debug(response, { depth: null })

@@ -47,6 +47,7 @@ const messages = {
   ],
   stillEmpty: [
     (room) => `Sigue sin haber ningun metanavarro ${rooms[room].in}.`,
+    (room) => `No hay nadie ${rooms[room].in}.`,
   ],
   entered: [
     (users) =>
@@ -239,5 +240,9 @@ const media_ids = await Promise.all(
 // https://developer.twitter.com/en/docs/counting-characters
 const text = message.slice(0, 280)
 
-const response = await client.v1.tweet(text, { media_ids })
-console.debug(response, { depth: null })
+let response
+try {
+  response = await client.v1.tweet(text, { media_ids })
+} catch (error) {
+  new Error(JSON.stringify(response))
+}

@@ -224,8 +224,6 @@ if (!tweets.length) {
   process.exit()
 }
 
-debug({ message, images })
-
 const {
   TWITTER_CONSUMER_API_KEY: appKey,
   TWITTER_CONSUMER_API_SECRET: appSecret,
@@ -242,6 +240,8 @@ const client = new TwitterApi({
 
 do {
   const { message, images } = tweets.pick()
+
+  debug({ message, images })
 
   const media_ids = await Promise.all(
     images.slice(0, 4).map(async (avatar) => {

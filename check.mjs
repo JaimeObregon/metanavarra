@@ -160,9 +160,6 @@ current.rooms.forEach((room) => {
   const entered = after.filter((item) => !before.includes(item)).map(parseUser)
   const left = before.filter((item) => !after.includes(item)).map(parseUser)
 
-  let message
-  let images = []
-
   if (!entered.length && !left.length) {
     // Nadie ha entrado ni salido de la sala
     const message = messages.unchanged.pick()(room.id)
@@ -170,18 +167,28 @@ current.rooms.forEach((room) => {
     tweets.push({ message, images })
   } else if (entered.length && !left.length) {
     // Ha habido entradas
-    const message = messages.entered.pick()(entered, room.id)
-    const images = []
+    const message = messages.entered.pick()(
+      entered.map((user) => user.name),
+      room.id
+    )
+    const images = entered.map((user) => user.image)
     tweets.push({ message, images })
   } else if (!entered.length && left.length) {
     // Ha habido salidas
-    const message = messages.left.pick()(left, room.id)
-    const images = []
+    const message = messages.left.pick()(
+      left.map((user) => user.name),
+      room.id
+    )
+    const images = left.map((user) => user.image)
     tweets.push({ message, images })
   } else if (entered.length && left.length) {
     // Ha habido entradas y salidas
-    const message = messages.enteredAndLeft.pick()(entered, left, room.id)
-    const images = []
+    const message = messages.enteredAndLeft.pick()(
+      entered.map((user) => user.name),
+      left.map((user) => user.name),
+      room.id
+    )
+    const images = entered.map((user) => user.image)
     tweets.push({ message, images })
   }
 
@@ -199,8 +206,6 @@ current.rooms.forEach((room) => {
     // Había gente antes y sigue habiéndola,
     // aunque no tienen por qué ser los mismos
   }
-
-  return { message, images }
 })
 
 console.debug(tweets, { depth: null })
@@ -211,7 +216,7 @@ if (!tweets.length) {
 
 const { message, images } = tweets.pick()
 
-console.debug({ message, images })
+console.debug({ message, images }, { depth: null })
 
 const {
   TWITTER_CONSUMER_API_KEY: appKey,

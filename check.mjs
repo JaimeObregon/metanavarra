@@ -44,14 +44,23 @@ current.rooms.map(async (room) => {
     'https://dd2cgqlmnwvp5.cloudfront.net/avatar_generic_bodies/rpm_female_hoody/thumbnail.png',
   ]
 
-  const media_ids = await Promise.all(
-    avatars.map(async (avatar) => {
-      const response = await fetch(avatar)
-      const arrayBuffer = await response.arrayBuffer()
-      const buffer = Buffer.from(arrayBuffer)
-      return client.v1.uploadMedia(buffer, { mimeType: 'image/x-png' })
-    })
+  // const media_ids = await Promise.all(
+  //   avatars.map(async (avatar) => {
+  //     const response = await fetch(avatar)
+  //     const arrayBuffer = await response.arrayBuffer()
+  //     const buffer = Buffer.from(arrayBuffer)
+  //     return client.v1.uploadMedia(buffer, { mimeType: 'image/x-png' })
+  //   })
+  // )
+
+  const res = await fetch(
+    'https://dd2cgqlmnwvp5.cloudfront.net/avatar_generic_bodies/rpm_female_hijab/thumbnail.png'
   )
+  const arrayBuffer = await res.arrayBuffer()
+  const buffer = Buffer.from(arrayBuffer)
+  const media_ids = await Promise.all([
+    client.v1.uploadMedia(buffer, { mimeType: 'image/x-png' }),
+  ])
 
   console.log(media_ids)
 

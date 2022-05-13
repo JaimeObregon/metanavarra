@@ -26,10 +26,7 @@ jobs:
         run: |-
           CREDENTIALS="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTI0MzU0NjYsImlhdCI6MTY1MjM0OTA2NiwiaXNzIjoiaHR0cHM6Ly9hcGkuc3BhdGlhbC5pbyIsIm5vYXV0aCI6dHJ1ZSwicm9vbWlkIjoiNjI0NmI3MDY0ZjdhOTMwMDAxYTc2Mzc1Iiwic3ViIjoibm9hdXRofDYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyIsInVpZCI6IjYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyJ9._i3CYUS4u3Nr8XJU__qJI0_87TUcf56ppLJF0fJsrhQ"
 
-          ROOMS=(
-            6246b6964f7a930001a7636a # Sala principal
-            6246b7064f7a930001a76375 # Auditorio
-          )
+          ROOMS=(6246b6964f7a930001a7636a 6246b7064f7a930001a76375)
 
           git config user.name "Metanavarra"
           git config user.email "actions@users.noreply.github.com"
@@ -37,24 +34,10 @@ jobs:
           DATE=$(date -Iseconds)
 
           for ROOM in $ROOMS; do
-            echo $ROOM
-          done
-
-          for ROOM in $ROOMS; do
-            echo $ROOM
-            echo $ROOM
-          done
-
-          for ROOM in $ROOMS; do
-            echo $ROOM;
-            echo $ROOM;
-          done
-
-          for ROOM in $ROOMS; do
             curl --silent --header "Authorization: $CREDENTIALS" \
               "https://api.spatial.io/api/v1/rooms/?queryType=batch&roomIDs=$ROOM" \
             | jq > "$ROOM/$DATE.json"
-            node check.js "$ROOM.json" "$ROOM/$DATE.json"
+            node check.mjs "$ROOM.json" "$ROOM/$DATE.json"
             ln -sf "$ROOM/$DATE.json" "$ROOM.json"
             git add $ROOM "$ROOM.json"
           done

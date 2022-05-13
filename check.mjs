@@ -158,7 +158,7 @@ const [previous, current] = process.argv.slice(-2).map((filename) => {
 
 debug({ previous, current })
 
-const tweets = []
+let tweets = []
 
 current.rooms.forEach((room) => {
   const before = room.activeParticipants
@@ -224,8 +224,6 @@ if (!tweets.length) {
   process.exit()
 }
 
-const { message, images } = tweets.pick()
-
 debug({ message, images })
 
 const {
@@ -242,24 +240,26 @@ const client = new TwitterApi({
   accessSecret,
 })
 
-const media_ids = await Promise.all(
-  images.slice(0, 4).map(async (avatar) => {
-    const response = await fetch(avatar)
-    const arrayBuffer = await response.arrayBuffer()
-    const buffer = Buffer.from(arrayBuffer)
-    return client.v1.uploadMedia(buffer, { mimeType: 'image/x-png' })
-  })
-)
+do {
+  const { message, images } = tweets.pick()
 
-// No es correcto, pero es suficientemente válido
-// https://developer.twitter.com/en/docs/counting-characters
-const text = message.slice(0, 280)
+  const media_ids = await Promise.all(
+    images.slice(0, 4).map(async (avatar) => {
+      const response = await fetch(avatar)
+      const arrayBuffer = await response.arrayBuffer()
+      const buffer = Buffer.from(arrayBuffer)
+      return client.v1.uploadMedia(buffer, { mimeType: 'image/x-png' })
+    })
+  )
 
-try {
-  await client.v1.tweet(text, { media_ids })
-} catch (error) {
-  debug(error)
-  throw new Error(error.data.errors[0].message)
-}
+  // No es correcto, pero es suficientemente válido
+  // https://developer.twitter.com/en/docs/counting-characters
+  const text = message.slice(0, 280)
 
-debug(response)
+  try {
+    await client.v1.tweet(text, { media_ids })
+    process.exit()
+  } catch (error) {
+    tweets = tweets.filter((item) => item.message !== tweet.message)
+  }
+} while (tweets.length)

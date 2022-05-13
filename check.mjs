@@ -249,7 +249,11 @@ const client = new TwitterApi({
 })
 
 do {
-  const { message, images } = tweets.pick()
+  const tweetsWithImages = tweets.filter((tweet) => tweet.images.length)
+
+  const { message, images } = tweetsWithImages.length
+    ? tweetsWithImages.pick()
+    : tweets.pick()
 
   debug({ message, images })
 

@@ -126,6 +126,23 @@ if (process.argv.length !== 4) {
   )
 }
 
+const parseUser = (user) => {
+  const image = user.profilePicURL
+
+  if (users[user.id]) {
+    const name = users[user.id]
+    return { name, image }
+  }
+
+  const alias = /female/.test(user.profilePicURL)
+    ? 'Una usuaria anónima'
+    : 'Un usuario anónimo'
+
+  const name = user.displayName || alias
+
+  return { name, image }
+}
+
 const [previous, current] = process.argv.slice(-2).map((filename) => {
   const file = fs.readFileSync(filename).toString()
   return JSON.parse(file)
@@ -139,8 +156,8 @@ current.rooms.forEach((room) => {
   const before = room.activeParticipants
   const after = previous.rooms.find((r) => r.id === room.id).activeParticipants
 
-  const entered = after.filter((item) => !before.includes(item))
-  const left = before.filter((item) => !after.includes(item))
+  const entered = after.filter((item) => !before.includes(item)).map(parseUser)
+  const left = before.filter((item) => !after.includes(item)).map(parseUser)
 
   let message
   let images = []

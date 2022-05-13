@@ -27,14 +27,14 @@ const users = {
 const rooms = {
   '6246b6964f7a930001a7636a': {
     name: 'Espacio «Gobierno de Navarra»',
-    long: 'El espacio «Gobierno de Navarra»',
+    long: 'el espacio «Gobierno de Navarra»',
     from: 'del espacio «Gobierno de Navarra»',
     in: 'en el espacio «Gobierno de Navarra»',
     to: 'al espacio «Gobierno de Navarra»',
   },
   '6246b7064f7a930001a76375': {
     name: 'Auditorio',
-    long: 'El Auditorio',
+    long: 'el Auditorio',
     from: 'del Auditorio',
     in: 'en el Auditorio',
     to: 'al Auditorio',
@@ -171,8 +171,8 @@ debug({ previous, current })
 let tweets = []
 
 current.rooms.forEach((room) => {
-  const before = room.activeParticipants
-  const after = previous.rooms.find((r) => r.id === room.id).activeParticipants
+  const after = room.activeParticipants
+  const before = previous.rooms.find((r) => r.id === room.id).activeParticipants
 
   const entered = after.filter((item) => !before.includes(item)).map(parseUser)
   const left = before.filter((item) => !after.includes(item)).map(parseUser)

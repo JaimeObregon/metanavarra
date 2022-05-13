@@ -260,6 +260,7 @@ do {
     await client.v1.tweet(text, { media_ids })
     process.exit()
   } catch (error) {
+    debug(error.data.errors[0].message)
     tweets = tweets.filter((tweet) => tweet.message !== message)
   }
 } while (tweets.length)

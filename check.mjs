@@ -39,7 +39,7 @@ const client = new TwitterApi({
   accessSecret,
 })
 
-json.rooms.map(async (room) => {
+current.rooms.map(async (room) => {
   const text = `${room.name} (${room.id})`
 
   const avatars = [

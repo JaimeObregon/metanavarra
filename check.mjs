@@ -211,7 +211,7 @@ if (!tweets.length) {
 
 const { message, images } = tweets.pick()
 
-console.log({ message, images })
+console.debug({ message, images })
 
 const {
   TWITTER_CONSUMER_API_KEY: appKey,

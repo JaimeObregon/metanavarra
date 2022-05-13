@@ -20,7 +20,7 @@ const [previous, current] = process.argv
   })
   .map((json) => json.rooms[0].activeParticipants)
 
-console.log({ previous, current })
+const room = current.rooms[0]
 
 const {
   TWITTER_CONSUMER_API_KEY: appKey,
@@ -36,7 +36,22 @@ const client = new TwitterApi({
   accessSecret,
 })
 
-const text = 'Hola II :)'
-const response = await client.v2.post('tweets', { text })
+const text = `${room.name}`
+
+const avatars = [
+  'https://dd2cgqlmnwvp5.cloudfront.net/avatar_generic_bodies/rpm_female_hijab/thumbnail.png',
+  'https://dd2cgqlmnwvp5.cloudfront.net/avatar_generic_bodies/rpm_female_hoody/thumbnail.png',
+]
+
+const media_ids = await Promise.all(
+  avatars.map(async (avatar) => {
+    const response = await fetch(avatar)
+    const arrayBuffer = await response.arrayBuffer()
+    const buffer = Buffer.from(arrayBuffer)
+    return client.v1.uploadMedia(buffer, { mimeType: 'image/x-png' })
+  })
+)
+
+const response = await client.v2.post('tweets', { text, media_ids })
 
 console.log(response)

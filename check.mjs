@@ -80,6 +80,12 @@ const messages = {
       `Es con gran congoja que os informo de la marcha de ${users.concat()} ${
         rooms[room].from
       }.`,
+    (users, room) =>
+      `${
+        users.length === 1
+          ? `${users.concat()} ha abandonado`
+          : `${users.concat()} han abandonado`
+      } el metaverso en dirección al universo.`,
   ],
   enteredAndLeft: [
     (entered, left, room) =>
@@ -266,9 +272,12 @@ do {
     })
   )
 
-  // No es correcto, pero es suficientemente válido
+  // Esto no es correcto, pero es suficientemente válido
   // https://developer.twitter.com/en/docs/counting-characters
-  const text = message.slice(0, 280)
+  // No apuro los 280 caracteres debido a esta imprecisión.
+  const maxLength = 270
+  const text =
+    message.length > maxLength ? `${message.slice(0, maxLength - 2)}…` : message
 
   try {
     await client.v1.tweet(text, { media_ids })

@@ -259,7 +259,8 @@ let response
 try {
   response = await client.v1.tweet(text, { media_ids })
 } catch (error) {
-  throw new Error(JSON.stringify(response))
+  debug(JSON.stringify(response))
+  throw new Error()
 }
 
 debug(response)

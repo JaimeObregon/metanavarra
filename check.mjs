@@ -36,7 +36,7 @@ const client = new TwitterApi({
   accessSecret,
 })
 
-const text = 'Hola :)'
+const text = 'Hola II :)'
 const response = await client.v2.post('tweets', { text })
 
 console.log(response)

@@ -1,6 +1,7 @@
 import fs from 'fs'
 import { TwitterApi } from 'twitter-api-v2'
 import fetch from 'node-fetch'
+import { util } from 'util'
 
 const users = {
   '6242c206d3dd2500016583cb': {
@@ -127,6 +128,12 @@ if (process.argv.length !== 4) {
   )
 }
 
+const debug = (object) => {
+  console.log(
+    util.inspect(object, { showHidden: false, depth: null, colors: true })
+  )
+}
+
 const parseUser = (user) => {
   const image = user.profilePicURL
 
@@ -149,7 +156,7 @@ const [previous, current] = process.argv.slice(-2).map((filename) => {
   return JSON.parse(file)
 })
 
-console.debug({ previous, current }, { depth: null })
+debug({ previous, current })
 
 const tweets = []
 
@@ -211,7 +218,7 @@ current.rooms.forEach((room) => {
   }
 })
 
-console.debug(tweets, { depth: null })
+debug(tweets)
 
 if (!tweets.length) {
   process.exit()
@@ -219,7 +226,7 @@ if (!tweets.length) {
 
 const { message, images } = tweets.pick()
 
-console.debug({ message, images }, { depth: null })
+debug({ message, images })
 
 const {
   TWITTER_CONSUMER_API_KEY: appKey,
@@ -252,7 +259,7 @@ let response
 try {
   response = await client.v1.tweet(text, { media_ids })
 } catch (error) {
-  new Error(JSON.stringify(response))
+  throw new Error(JSON.stringify(response))
 }
 
-console.debug(response, { depth: null })
+debug(response)

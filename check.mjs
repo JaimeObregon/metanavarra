@@ -54,6 +54,15 @@ const messages = {
     (room) =>
       `Son las ${hour} y sigue sin haber ningun metanavarro ${rooms[room].in}.`,
     (room) => `No hay nadie ${rooms[room].in}. Son las ${hour}.`,
+    (room) => `¡Eco, ecooooooo! Sigue vacío ${rooms[room].long}.`,
+    (room) =>
+      `Hay amebas con más vida que este metaverso. Son las ${hour} y sigue vacío.`,
+    (room) =>
+      `Universo 1 - Metaverso 0. Son las ${hour} y esto sigue más aburrido que un surfista en Soria.`,
+    (room) =>
+      `Las ${hour} y aquí ando en ${rooms[room].long}… más solo que un vegetariano en una barbacoa.`,
+    (room) =>
+      `Se ruega a los cero mil cerocientos cibernautas que están ahora mismo en ${rooms[room].long} que mantengan la distancia de seguridad. ${hour}.`,
   ],
   entered: [
     (users, room) =>

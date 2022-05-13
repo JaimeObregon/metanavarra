@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { TwitterApi } from 'twitter-api-v2'
 import fetch from 'node-fetch'
-import { util } from 'util'
+import util from 'util'
 
 const users = {
   '6242c206d3dd2500016583cb': {

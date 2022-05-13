@@ -37,6 +37,20 @@ jobs:
           DATE=$(date -Iseconds)
 
           for ROOM in $ROOMS; do
+            echo $ROOM
+          done
+
+          for ROOM in $ROOMS; do
+            echo $ROOM
+            echo $ROOM
+          done
+
+          for ROOM in $ROOMS; do
+            echo $ROOM;
+            echo $ROOM;
+          done
+
+          for ROOM in $ROOMS; do
             curl --silent --header "Authorization: $CREDENTIALS" \
               "https://api.spatial.io/api/v1/rooms/?queryType=batch&roomIDs=$ROOM" \
             | jq > "$ROOM/$DATE.json"

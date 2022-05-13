@@ -50,7 +50,7 @@ const messages = {
     (room) => `No hay nadie ${rooms[room].in}.`,
   ],
   entered: [
-    (users) =>
+    (users, room) =>
       users.length === 1
         ? `${users[0]} is in da house! 🕺`
         : `${users.concat()} are in da house! ${Array(users.length)
@@ -188,7 +188,10 @@ current.rooms.forEach((room) => {
       left.map((user) => user.name),
       room.id
     )
-    const images = entered.map((user) => user.image)
+    const images = [
+      ...entered.map((user) => user.image),
+      ...left.map((user) => user.image),
+    ]
     tweets.push({ message, images })
   }
 

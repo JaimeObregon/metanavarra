@@ -17,13 +17,10 @@ if (process.argv.length !== 4) {
   )
 }
 
-const [previous, current] = process.argv
-  .slice(-2)
-  .map((filename) => {
-    const file = fs.readFileSync(filename).toString()
-    return JSON.parse(file)
-  })
-  .map((json) => json.rooms)
+const [previous, current] = process.argv.slice(-2).map((filename) => {
+  const file = fs.readFileSync(filename).toString()
+  return JSON.parse(file)
+})
 
 const {
   TWITTER_CONSUMER_API_KEY: appKey,

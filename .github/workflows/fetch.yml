@@ -1,4 +1,4 @@
-name: De paseo por el metaverso
+name: De paseo por el metaverso más foral
 
 on:
   push:
@@ -13,42 +13,36 @@ jobs:
     steps:
       - name: Trae el repositorio
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-          fetch-depth: 0
-      - name: Comprueba el estado del metaverso
+      - name: Captura el estado de las salas
         run: |-
-          mkdir backup && cp *.json backup
-          curl --silent 'https://api.spatial.io/api/v1/rooms/?queryType=batch&roomIDs=6246b6964f7a930001a7636a' \
-          -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTI0MzU0NjYsImlhdCI6MTY1MjM0OTA2NiwiaXNzIjoiaHR0cHM6Ly9hcGkuc3BhdGlhbC5pbyIsIm5vYXV0aCI6dHJ1ZSwicm9vbWlkIjoiNjI0NmI3MDY0ZjdhOTMwMDAxYTc2Mzc1Iiwic3ViIjoibm9hdXRofDYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyIsInVpZCI6IjYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyJ9._i3CYUS4u3Nr8XJU__qJI0_87TUcf56ppLJF0fJsrhQ' \
-          | jq > 6246b6964f7a930001a7636a.json
-          curl --silent 'https://api.spatial.io/api/v1/rooms/?queryType=batch&roomIDs=6246b7064f7a930001a76375' \
-          -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTI0MzU0NjYsImlhdCI6MTY1MjM0OTA2NiwiaXNzIjoiaHR0cHM6Ly9hcGkuc3BhdGlhbC5pbyIsIm5vYXV0aCI6dHJ1ZSwicm9vbWlkIjoiNjI0NmI3MDY0ZjdhOTMwMDAxYTc2Mzc1Iiwic3ViIjoibm9hdXRofDYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyIsInVpZCI6IjYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyJ9._i3CYUS4u3Nr8XJU__qJI0_87TUcf56ppLJF0fJsrhQ' \
-          | jq > 6246b7064f7a930001a76375.json
-      - name: Lee la salida anterior
-        id: before
-        run: echo ::set-output name=response::$(cat backup/6246b6964f7a930001a7636a.json)
-      - name: Lee la salida
-        id: read
-        run: echo ::set-output name=response::$(cat 6246b6964f7a930001a7636a.json)
-      - name: Hace «commit»
-        run: |-
+          CREDENTIALS="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTI0MzU0NjYsImlhdCI6MTY1MjM0OTA2NiwiaXNzIjoiaHR0cHM6Ly9hcGkuc3BhdGlhbC5pbyIsIm5vYXV0aCI6dHJ1ZSwicm9vbWlkIjoiNjI0NmI3MDY0ZjdhOTMwMDAxYTc2Mzc1Iiwic3ViIjoibm9hdXRofDYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyIsInVpZCI6IjYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyJ9._i3CYUS4u3Nr8XJU__qJI0_87TUcf56ppLJF0fJsrhQ"
+
+          ROOMS=(
+            6246b6964f7a930001a7636a # Sala principal
+            6246b7064f7a930001a76375 # Auditorio
+          )
+
           git config user.name "Metanavarra"
           git config user.email "actions@users.noreply.github.com"
-          timestamp=$(date -u)
-          git commit -am "Actualización del ${timestamp}"
-      - name: Hace el «push»
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.token }}
-      - name: Y lo casca en Twitter
-        uses: ./.github/actions/metanavarra
-        with:
-          before: ${{ steps.before.outputs.response }}
-          response: ${{ steps.read.outputs.response }}
-          tweet-message: '¡Hola, mundo IV!'
+
+          DATE=$(date -Iseconds)
+
+          for ROOM in $ROOMS; do
+            curl --silent --header "Authorization: $CREDENTIALS" \
+              "https://api.spatial.io/api/v1/rooms/?queryType=batch&roomIDs=$ROOM" \
+            | jq > "$ROOM/$DATE.json"
+            node check.js "$ROOM.json" "$ROOM/$DATE.json"
+            ln -sf "$ROOM/$DATE.json" "$ROOM.json"
+            git add $ROOM "$ROOM.json"
+          done
+
+          git commit --message="Toma de datos del $DATE"
         env:
           TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           TWITTER_CONSUMER_API_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+      - name: Hace el «push»
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.token }}

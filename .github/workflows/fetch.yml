@@ -24,24 +24,22 @@ jobs:
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
         run: |-
-          CREDENTIALS="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTI0MzU0NjYsImlhdCI6MTY1MjM0OTA2NiwiaXNzIjoiaHR0cHM6Ly9hcGkuc3BhdGlhbC5pbyIsIm5vYXV0aCI6dHJ1ZSwicm9vbWlkIjoiNjI0NmI3MDY0ZjdhOTMwMDAxYTc2Mzc1Iiwic3ViIjoibm9hdXRofDYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyIsInVpZCI6IjYyN2NkNjJmZjdkYTMxMDAwMTc3ZjY5YyJ9._i3CYUS4u3Nr8XJU__qJI0_87TUcf56ppLJF0fJsrhQ"
-
-          ROOMS="6246b6964f7a930001a7636a 6246b7064f7a930001a76375"
+          CREDENTIALS="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTI1MzY4MDEsImlhdCI6MTY1MjQ1MDQwMSwiaXNzIjoiaHR0cHM6Ly9hcGkuc3BhdGlhbC5pbyIsIm5vYXV0aCI6dHJ1ZSwicm9vbWlkIjoiNjI0NmI2OTY0ZjdhOTMwMDAxYTc2MzZhIiwic3ViIjoibm9hdXRofDYyN2U2NDYwMTNiODcxMDAwMTIwMjNhOSIsInVpZCI6IjYyN2U2NDYwMTNiODcxMDAwMTIwMjNhOSJ9.Ppal-0PPPr-zxg-D5e6VXIchwK9jjh1kLM-JRS2DLZM"
 
           git config user.name "Metanavarra"
           git config user.email "actions@users.noreply.github.com"
 
           DATE=$(date -Iseconds)
 
-          for ROOM in $ROOMS; do
-            curl --silent --header "Authorization: $CREDENTIALS" \
-              "https://api.spatial.io/api/v1/rooms/?queryType=batch&roomIDs=$ROOM" \
-            | jq > "$ROOM/$DATE.json"
-            node check.mjs "$ROOM.json" "$ROOM/$DATE.json"
-            ln -sf "$ROOM/$DATE.json" "$ROOM.json"
-            git add $ROOM "$ROOM.json"
-          done
+          curl --silent --header "Authorization: $CREDENTIALS" \
+            "https://api.spatial.io/api/v1/rooms/?queryType=batch&roomIDs=6246b6964f7a930001a7636a&roomIDs=6246b7064f7a930001a76375" \
+          | jq > "responses/$DATE.json"
 
+          node check.mjs "latest.json" "responses/$DATE.json"
+
+          ln -sf "responses/$DATE.json" latest.json
+
+          git add responses latest.json
           git commit --message="Toma de datos del $DATE"
       - name: Hace el «push»
         uses: ad-m/github-push-action@master

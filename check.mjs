@@ -168,8 +168,8 @@ const parseUser = (user) => {
   }
 
   const alias = /female/.test(user.profilePicURL)
-    ? 'Una usuaria anónima'
-    : 'Un usuario anónimo'
+    ? 'Usuaria anónima'
+    : 'Usuario anónimo'
 
   const name = user.displayName || alias
 

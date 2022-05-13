@@ -255,13 +255,11 @@ const media_ids = await Promise.all(
 // https://developer.twitter.com/en/docs/counting-characters
 const text = message.slice(0, 280)
 
-let response
 try {
-  response = await client.v1.tweet(text, { media_ids })
+  await client.v1.tweet(text, { media_ids })
 } catch (error) {
-  debug(JSON.stringify(response))
   debug(error)
-  throw new Error(error)
+  throw new Error(error.data.errors[0].message)
 }
 
 debug(response)

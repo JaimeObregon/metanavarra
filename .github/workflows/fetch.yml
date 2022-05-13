@@ -3,7 +3,7 @@ name: De paseo por el metaverso más foral
 on:
   push:
     paths:
-      - '**.js'
+      - '**.mjs'
       - '**.yml'
   schedule:
     - cron: '*/5 * * * *'

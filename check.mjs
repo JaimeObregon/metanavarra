@@ -42,13 +42,16 @@ const rooms = {
 const messages = {
   empty: [
     (room) =>
-      `Hay 661.197 navarros en el universo y ninguno en el metaverso. Al menos ${rooms[room].in}.`,
-    (room) => `La metavérsica sala de nombre ${rooms[room].name} está vacía.`,
-    (room) => `Frío como el metaverso vacío: ${rooms[room].in} no hay nadie.`,
+      `Hay 661.197 navarros en el universo y ninguno en el metaverso. Al menos ${rooms[room].in} a las ${hour}.`,
+    (room) =>
+      `La metavérsica sala de nombre ${rooms[room].name} está vacía a las ${hour}.`,
+    (room) =>
+      `Frío como el metaverso vacío: las ${hour} y ${rooms[room].in} no hay nadie.`,
   ],
   stillEmpty: [
-    (room) => `Sigue sin haber ningun metanavarro ${rooms[room].in}.`,
-    (room) => `No hay nadie ${rooms[room].in}.`,
+    (room) =>
+      `Son las ${hour} y sigue sin haber ningun metanavarro ${rooms[room].in}.`,
+    (room) => `No hay nadie ${rooms[room].in}. Son las ${hour}.`,
   ],
   entered: [
     (users, room) =>
@@ -89,7 +92,7 @@ const messages = {
   ],
   unchanged: [
     (room) =>
-      `Todo cambia. Menos ${rooms[room].long}, donde no ha entrado ni salido nadie.`,
+      `Todo cambia. Menos ${rooms[room].long}, donde a las ${hour} no ha entrado ni salido nadie.`,
   ],
 }
 
@@ -120,6 +123,11 @@ Object.defineProperty(String.prototype, 'escape', {
   value: function () {
     return this.replace(/([@\.])/g, '$1U+200B')
   },
+})
+
+const hour = new Date().toLocaleTimeString('es-ES', {
+  hour: '2-digit',
+  minute: '2-digit',
 })
 
 if (process.argv.length !== 4) {

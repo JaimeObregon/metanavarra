@@ -53,6 +53,8 @@ current.rooms.map(async (room) => {
     })
   )
 
+  console.log(media_ids)
+
   const response = await client.v2.post('tweets', { text, media_ids })
 
   console.log(response)

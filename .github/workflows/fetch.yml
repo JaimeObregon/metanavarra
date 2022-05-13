@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '**.js'
+      - '**.yml'
   schedule:
     - cron: '*/5 * * * *'
 

@@ -42,15 +42,13 @@ const rooms = {
 }
 
 const messages = {
-  empty: [
+  stillEmpty: [
     (room) =>
       `Hay 661.197 navarros en el universo y ninguno en el metaverso. Al menos ${rooms[room].in} a las ${hour}.`,
     (room) =>
       `La metavérsica sala de nombre ${rooms[room].name} está vacía a las ${hour}.`,
     (room) =>
       `Frío como el metaverso vacío: las ${hour} y ${rooms[room].in} no hay nadie.`,
-  ],
-  stillEmpty: [
     (room) =>
       `Son las ${hour} y sigue sin haber ningun metanavarro ${rooms[room].in}.`,
     (room) => `No hay nadie ${rooms[room].in}. Son las ${hour}.`,
@@ -60,9 +58,13 @@ const messages = {
     (room) =>
       `Universo 1 - Metaverso 0. Son las ${hour} y esto sigue más aburrido que un surfista en Soria.`,
     (room) =>
-      `Las ${hour} y aquí ando en ${rooms[room].long}… más solo que un vegetariano en una barbacoa.`,
+      `Las ${hour} y aquí ando en ${rooms[room].long}… más solo que un vegano en una barbacoa.`,
     (room) =>
       `Se ruega a los cero mil cerocientos cibernautas que están ahora mismo en ${rooms[room].long} que mantengan la distancia de seguridad. ${hour}.`,
+    (room) =>
+      `«La soledad es la suerte de todos los espíritus excelentes» — Arthur Schopenhauer.\nEntonces a mí me ha tocado la lotería, porque son las ${hour} y en ${rooms[room].long} del metaverso no hay nadie.`,
+    (room) =>
+      `¡Al fondo hay sitio! Y al frente. Y a los lados. Porque está vacío ${rooms[room].long}. Son las ${hour}`,
   ],
   entered: [
     (users, room) =>
@@ -110,6 +112,8 @@ const messages = {
   unchanged: [
     (room) =>
       `Todo cambia. Menos ${rooms[room].long}, donde a las ${hour} no ha entrado ni salido nadie.`,
+    (room) => `Estoy en ${rooms[room].long} y aquí no hay ni Perry. ${hour}.`,
+    (room) => `🥱💤. Ni Blas en ${rooms[room].long} a las ${hour}.`,
   ],
 }
 
@@ -167,9 +171,10 @@ const parseUser = (user) => {
     return { name, image }
   }
 
+  const hash = user.id.slice(-4)
   const alias = /female/.test(user.profilePicURL)
-    ? 'Usuaria anónima'
-    : 'Usuario anónimo'
+    ? `Usuaria Anónima ${hash}`
+    : `Usuario Anónimo ${hash}`
 
   const name = user.displayName || alias
 

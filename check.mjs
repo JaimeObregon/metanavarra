@@ -65,6 +65,10 @@ const messages = {
       `«La soledad es la suerte de todos los espíritus excelentes» — Arthur Schopenhauer.\nEntonces a mí me ha tocado la lotería, porque son las ${hour} y en ${rooms[room].long} del metaverso no hay nadie.`,
     (room) =>
       `¡Al fondo hay sitio! Y al frente. Y a los lados. Porque está vacío ${rooms[room].long}. Son las ${hour}`,
+    (room) =>
+      `«A mis soledades voy\nde mis soledades vengo,\nporque para andar conmigo\nme bastan mis pensamientos».\n— Lope de Vega, desde el metaverso.\nSon las ${hour} y ${rooms[room].long} está lleno de… metavacío.`,
+    (room) =>
+      `🎵 Ella despidió a su amooor\nEl partió en un barco\nen el muelle de San Blaaas 🎶\nEl juró que volvería…\n🎶 Y empapada en llanto,\nella juró que esperaría…\nMiles de lunas pasaron 🎵\nY siempre ella estaba en el muelle,\nesperandoooo… 🎶🎵\n\nAsí estoy yo en el muelle del Metaverso: solo y esperando a las ${hour} en ${rooms[room].long}…`,
   ],
   entered: [
     (users, room) =>

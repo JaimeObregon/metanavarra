@@ -280,12 +280,15 @@ do {
   debug({ message, images })
 
   const media_ids = await Promise.all(
-    images.slice(0, 4).map(async (avatar) => {
-      const response = await fetch(avatar)
-      const arrayBuffer = await response.arrayBuffer()
-      const buffer = Buffer.from(arrayBuffer)
-      return client.v1.uploadMedia(buffer, { mimeType: 'image/x-png' })
-    })
+    images
+      .filter((avatar) => /\.png$/.test(avatar))
+      .slice(0, 4)
+      .map(async (avatar) => {
+        const response = await fetch(avatar)
+        const arrayBuffer = await response.arrayBuffer()
+        const buffer = Buffer.from(arrayBuffer)
+        return client.v1.uploadMedia(buffer, { mimeType: 'image/x-png' })
+      })
   )
 
   // Esto no es correcto, pero es suficientemente válido

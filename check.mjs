@@ -63,6 +63,8 @@ const messages = {
       `Se ruega a los cero mil cerocientos cibernautas que están ahora mismo en ${rooms[room].long} que mantengan la distancia de seguridad. ${hour}.`,
     (room) =>
       `«La soledad es la suerte de todos los espíritus excelentes» — Arthur Schopenhauer.\nEntonces a mí me ha tocado la lotería, porque son las ${hour} y en ${rooms[room].long} del metaverso no hay nadie.`,
+    (room) => `Estoy en ${rooms[room].long} y aquí no hay ni Perry. ${hour}.`,
+    (room) => `🥱💤. Ni Blas en ${rooms[room].long} a las ${hour}.`,
     (room) =>
       `¡Al fondo hay sitio! Y al frente. Y a los lados. Porque está vacío ${rooms[room].long}. Son las ${hour}`,
     (room) =>
@@ -116,8 +118,6 @@ const messages = {
   unchanged: [
     (room) =>
       `Todo cambia. Menos ${rooms[room].long}, donde a las ${hour} no ha entrado ni salido nadie.`,
-    (room) => `Estoy en ${rooms[room].long} y aquí no hay ni Perry. ${hour}.`,
-    (room) => `🥱💤. Ni Blas en ${rooms[room].long} a las ${hour}.`,
   ],
 }
 

@@ -88,9 +88,7 @@ const messages = {
     (users, room) =>
       `${Array(users.length)
         .fill('👋')
-        .join('')} ¡Demos la bienvenida a ${users.concat()} a ${
-        rooms[room].to
-      }!`,
+        .join('')} ¡Demos la bienvenida a ${users.concat()} ${rooms[room].to}!`,
   ],
   left: [
     (users, room) =>

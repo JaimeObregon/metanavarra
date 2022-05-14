@@ -201,8 +201,8 @@ current.rooms.forEach((room) => {
   const entered = after.filter((item) => !before.includes(item)).map(parseUser)
   const left = before.filter((item) => !after.includes(item)).map(parseUser)
 
-  if (!entered.length && !left.length) {
-    // Nadie ha entrado ni salido de la sala
+  if (!entered.length && !left.length && before.length && after.length) {
+    // Nadie ha entrado ni salido de la sala, pero hay gente
     const message = messages.unchanged.pick()(room.id)
     const images = []
     tweets.push({ message, images })

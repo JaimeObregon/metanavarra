@@ -1,7 +1,7 @@
 import fs from 'fs'
-import { TwitterApi } from 'twitter-api-v2'
 import fetch from 'node-fetch'
 import util from 'util'
+import { TwitterApi } from 'twitter-api-v2'
 
 process.env.TZ = 'Europe/Madrid'
 

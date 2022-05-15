@@ -32,7 +32,7 @@ jobs:
             'https://api.spatial.io/api/v1/rooms/noauth/6246b6964f7a930001a7636a' -X POST \
             --data-raw '{"roomShareID":"4069560728893578203","noAuthUserID":""}' | jq --raw-output '.tempToken')
 
-          git config user.name "Metanavarra"
+          git config user.name "El portero del metaverso"
           git config user.email "actions@users.noreply.github.com"
 
           DATE=$(date -Iseconds)

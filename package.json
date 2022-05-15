@@ -3,9 +3,6 @@
   "author": "Jaime Gómez-Obregón",
   "version": "1.0.0",
   "description": "Llevando la transparencia al metaverso del Gobierno de Navarra.",
-  "scripts": {
-    "build": "cd .github/actions/metanavarra && ncc build index.js -o dist"
-  },
   "prettier": {
     "semi": false,
     "singleQuote": true

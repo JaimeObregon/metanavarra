@@ -75,14 +75,14 @@ const messages = {
   entered: [
     (users, room) =>
       users.length === 1
-        ? `${users[0]} is in da house! 🕺`
+        ? `${users.concat()} is in da house! 🕺`
         : `${users.concat()} are in da house! ${Array(users.length)
             .fill('🕺')
             .join('')}`,
     (users, room) =>
       `📣 EL METAVERSO INFORMA: ${
         users.length === 1
-          ? `${users[0]} ha llegado ${rooms[room].to}.`
+          ? `${users.concat()} ha llegado ${rooms[room].to}.`
           : `${users.concat()} han llegado ${rooms[room].to}.`
       }`,
     (users, room) =>
@@ -106,10 +106,10 @@ const messages = {
     (entered, left, room) =>
       [
         entered.length === 1
-          ? `¡${entered[0]} ha llegado!`
+          ? `¡${entered.concat()} ha llegado!`
           : `¡${entered.concat()} han llegado!`,
         left.length === 1
-          ? `${left[0]} ha partido.`
+          ? `${left.concat()} ha partido.`
           : `${left.concat()} han partido.`,
       ].join(' Y '),
   ],
@@ -121,13 +121,14 @@ const messages = {
 
 Object.defineProperty(Array.prototype, 'concat', {
   value: function () {
-    if (this.length <= 1) {
-      return this.toString()
-    } else if (this.length === 2) {
-      return this.join(' y ')
+    const items = this.map((item) => `«${item}»`)
+    if (items.length <= 1) {
+      return items.toString()
+    } else if (items.length === 2) {
+      return items.join(' y ')
     }
 
-    return [this.slice(0, this.length - 1).join(', '), this.slice(-1)].join(
+    return [items.slice(0, items.length - 1).join(', '), items.slice(-1)].join(
       ' y '
     )
   },

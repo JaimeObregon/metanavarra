@@ -212,33 +212,32 @@ current.rooms.forEach((room) => {
     tweets.push({ message, images })
   } else if (entered.length && !left.length) {
     // Ha habido entradas
-    const users = after
-      .filter((user) => entered.includes(user.id))
-      .map((user) => parseUser(user).name)
-    const message = messages.entered.pick()(users, room.id)
-    const images = users.map((user) => user.image)
+    const users = after.filter((user) => entered.includes(user.id))
+    const message = messages.entered.pick()(
+      users.map((user) => parseUser(user).name),
+      room.id
+    )
+    const images = users.map((user) => parseUser(user).image)
     tweets.push({ message, images })
   } else if (!entered.length && left.length) {
     // Ha habido salidas
-    const users = before
-      .filter((user) => left.includes(user.id))
-      .map((user) => parseUser(user).name)
-    const message = messages.left.pick()(users, room.id)
-    const images = users.map((user) => user.image)
+    const users = before.filter((user) => left.includes(user.id))
+    const message = messages.left.pick()(
+      users.map((user) => parseUser(user).name),
+      room.id
+    )
+    const images = users.map((user) => parseUser(user).image)
     tweets.push({ message, images })
   } else if (entered.length && left.length) {
     // Ha habido entradas y salidas
-    const users1 = after
-      .filter((user) => entered.includes(user.id))
-      .map((user) => parseUser(user).name)
-    const users2 = before
-      .filter((user) => left.includes(user.id))
-      .map((user) => parseUser(user).name)
-    const message = messages.enteredAndLeft.pick()(users1, users2, room.id)
-    const images = [
-      ...users1.map((user) => user.image),
-      ...users2.map((user) => user.image),
-    ]
+    const users1 = after.filter((user) => entered.includes(user.id))
+    const users2 = before.filter((user) => left.includes(user.id))
+    const message = messages.enteredAndLeft.pick()(
+      users1.map((user) => parseUser(user).name),
+      users2.map((user) => parseUser(user).name),
+      room.id
+    )
+    const images = [...users1, ...users2].map((user) => parseUser(user).image)
     tweets.push({ message, images })
   }
 

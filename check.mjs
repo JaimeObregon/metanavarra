@@ -106,8 +106,8 @@ const messages = {
     (entered, left, room) =>
       [
         entered.length === 1
-          ? `¡${entered.concat()} ha llegado!`
-          : `¡${entered.concat()} han llegado!`,
+          ? `¡${entered.concat()} ha llegado ${rooms[room].to}!`
+          : `¡${entered.concat()} han llegado ${rooms[room].to}!`,
         left.length === 1
           ? `${left.concat()} ha partido.`
           : `${left.concat()} han partido.`,
@@ -176,8 +176,8 @@ const parseUser = (user) => {
 
   const hash = user.id.slice(-4)
   const alias = /female/.test(user.profilePicURL)
-    ? `Usuaria Anónima ${hash}`
-    : `Usuario Anónimo ${hash}`
+    ? `Anónima ${hash}`
+    : `Anónimo ${hash}`
 
   const name = user.displayName || alias
 
@@ -197,8 +197,13 @@ current.rooms.forEach((room) => {
   const after = room.activeParticipants
   const before = previous.rooms.find((r) => r.id === room.id).activeParticipants
 
-  const entered = after.filter((item) => !before.includes(item)).map(parseUser)
-  const left = before.filter((item) => !after.includes(item)).map(parseUser)
+  const entered = after
+    .map((user) => user.id)
+    .filter((item) => !before.map((user) => user.id).includes(item))
+
+  const left = before
+    .map((user) => user.id)
+    .filter((item) => !after.map((user) => user.id).includes(item))
 
   if (!entered.length && !left.length && before.length && after.length) {
     // Nadie ha entrado ni salido de la sala, pero hay gente
@@ -207,30 +212,32 @@ current.rooms.forEach((room) => {
     tweets.push({ message, images })
   } else if (entered.length && !left.length) {
     // Ha habido entradas
-    const message = messages.entered.pick()(
-      entered.map((user) => user.name),
-      room.id
-    )
-    const images = entered.map((user) => user.image)
+    const users = after
+      .filter((user) => entered.includes(user.id))
+      .map((user) => parseUser(user).name)
+    const message = messages.entered.pick()(users, room.id)
+    const images = users.map((user) => user.image)
     tweets.push({ message, images })
   } else if (!entered.length && left.length) {
     // Ha habido salidas
-    const message = messages.left.pick()(
-      left.map((user) => user.name),
-      room.id
-    )
-    const images = left.map((user) => user.image)
+    const users = before
+      .filter((user) => left.includes(user.id))
+      .map((user) => parseUser(user).name)
+    const message = messages.left.pick()(users, room.id)
+    const images = users.map((user) => user.image)
     tweets.push({ message, images })
   } else if (entered.length && left.length) {
     // Ha habido entradas y salidas
-    const message = messages.enteredAndLeft.pick()(
-      entered.map((user) => user.name),
-      left.map((user) => user.name),
-      room.id
-    )
+    const users1 = after
+      .filter((user) => entered.includes(user.id))
+      .map((user) => parseUser(user).name)
+    const users2 = before
+      .filter((user) => left.includes(user.id))
+      .map((user) => parseUser(user).name)
+    const message = messages.enteredAndLeft.pick()(users1, users2, room.id)
     const images = [
-      ...entered.map((user) => user.image),
-      ...left.map((user) => user.image),
+      ...users1.map((user) => user.image),
+      ...users2.map((user) => user.image),
     ]
     tweets.push({ message, images })
   }
@@ -292,12 +299,16 @@ do {
       })
   )
 
+  const escaped = message.escape()
+
   // Esto no es correcto, pero es suficientemente válido
   // https://developer.twitter.com/en/docs/counting-characters
-  // No apuro los 280 caracteres debido a esta imprecisión.
+  // No apuro los 280 caracteres debido a esta imprecisión,
+  // y para las dos posiciones del `…` en caso de elipsis.
   const maxLength = 270
+
   const text =
-    message.length > maxLength ? `${message.slice(0, maxLength - 2)}…` : message
+    escaped.length > maxLength ? `${escaped.slice(0, maxLength)}…` : escaped
 
   try {
     await client.v1.tweet(text, { media_ids })

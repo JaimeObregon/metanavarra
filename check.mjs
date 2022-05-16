@@ -145,7 +145,7 @@ Object.defineProperty(String.prototype, 'escape', {
   // al usuario de Twitter @Fulano. Lo evitamos introduciendo un espacio de ancho
   // nulo tras la arroba. Ídem con los enlaces.
   value: function () {
-    return this.replace(/([@\.])/g, '$1U+200B')
+    return this.replace(/@/g, '@\u200B').replace(/\.([a-z]+)/g, '\u200B.$1')
   },
 })
 

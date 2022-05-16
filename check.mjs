@@ -1,45 +1,14 @@
 import fs from 'fs'
 import fetch from 'node-fetch'
-import util from 'util'
 import { TwitterApi } from 'twitter-api-v2'
+import { debug, users, rooms, concat, escape, pick } from './functions.mjs'
 
 process.env.TZ = 'Europe/Madrid'
 
-const users = {
-  '6242c206d3dd2500016583cb': {
-    name: 'Gobierno de Navarra',
-    long: 'El Gobierno de Navarra',
-  },
-  '6242f0b97aeff10001025a0b': {
-    name: 'Gobierno de Navarra (propietario)',
-    long: 'El Gobierno de Navarra (propietario)',
-  },
-  '61b21d6bc92b1b000110003c': {
-    name: 'Administrador 003c',
-    long: 'El administrador 003c',
-  },
-  '5f72ee5afa7f116d57153fee': {
-    name: 'Administrador 3fee',
-    long: 'El administrador 3fee',
-  },
-}
-
-const rooms = {
-  '6246b6964f7a930001a7636a': {
-    name: 'Espacio «Gobierno de Navarra»',
-    long: 'el espacio «Gobierno de Navarra»',
-    from: 'del espacio «Gobierno de Navarra»',
-    in: 'en el espacio «Gobierno de Navarra»',
-    to: 'al espacio «Gobierno de Navarra»',
-  },
-  '6246b7064f7a930001a76375': {
-    name: 'Auditorio',
-    long: 'el Auditorio',
-    from: 'del Auditorio',
-    in: 'en el Auditorio',
-    to: 'al Auditorio',
-  },
-}
+const hour = new Date().toLocaleTimeString('es-ES', {
+  hour: '2-digit',
+  minute: '2-digit',
+})
 
 const messages = {
   stillEmpty: [
@@ -119,50 +88,13 @@ const messages = {
   ],
 }
 
-Object.defineProperty(Array.prototype, 'concat', {
-  value: function () {
-    const items = this.map((item) => `«${item}»`)
-    if (items.length <= 1) {
-      return items.toString()
-    } else if (items.length === 2) {
-      return items.join(' y ')
-    }
-
-    return [items.slice(0, items.length - 1).join(', '), items.slice(-1)].join(
-      ' y '
-    )
-  },
-})
-
-Object.defineProperty(Array.prototype, 'pick', {
-  value: function () {
-    return this[Math.floor(Math.random() * this.length)]
-  },
-})
-
-Object.defineProperty(String.prototype, 'escape', {
-  // No queremos que alguien entre llamándose @Fulano y eso provoque una mención
-  // al usuario de Twitter @Fulano. Lo evitamos introduciendo un espacio de ancho
-  // nulo tras la arroba. Ídem con los enlaces.
-  value: function () {
-    return this.replace(/@/g, '@\u200B').replace(/\.([a-z]+)/g, '\u200B.$1')
-  },
-})
-
-const hour = new Date().toLocaleTimeString('es-ES', {
-  hour: '2-digit',
-  minute: '2-digit',
-})
+Object.defineProperty(Array.prototype, 'concat', { value: concat })
+Object.defineProperty(Array.prototype, 'pick', { value: pick })
+Object.defineProperty(String.prototype, 'escape', { value: escape })
 
 if (process.argv.length !== 4) {
   throw new Error(
     'USO: node check.js FICHERO_JSON_ANTERIOR FICHERO_JSON_ACTUAL'
-  )
-}
-
-const debug = (object) => {
-  console.log(
-    util.inspect(object, { showHidden: false, depth: null, colors: true })
   )
 }
 

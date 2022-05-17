@@ -53,11 +53,13 @@ export function pick() {
   return this[Math.floor(Math.random() * this.length)]
 }
 
-// No queremos que alguien entre llamándose @Fulano y eso provoque una mención
-// al usuario de Twitter @Fulano. Lo evitamos introduciendo un espacio de ancho
-// nulo tras la arroba. Ídem con los enlaces.
+// No queremos que entre alguien llamándose @Fulano o #nosequé y eso provoque una
+// mención al usuario de Twitter @Fulano o un hashtag. Lo evitamos introduciendo
+// un espacio de ancho nulo tras la arroba. Ídem con los enlaces.
 export function escape() {
-  return this.replace(/@/g, '@\u200B').replace(/\.([a-z]+)/g, '\u200B.$1')
+  return this.replace(/([#@])/g, '$1\u200B')
+    .replace(/\.([a-z]+)/g, '\u200B.$1')
+    .replace(/[«»]/g, '"')
 }
 
 export const debug = (object) => {

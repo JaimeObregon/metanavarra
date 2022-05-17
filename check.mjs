@@ -111,7 +111,13 @@ const parseUser = (user) => {
     ? `Anónima ${hash}`
     : `Anónimo ${hash}`
 
-  const name = user.displayName || alias
+  const maxLength = 18
+  const trimmed =
+    user.displayName.length <= maxLength
+      ? user.displayName.slice(0, maxLength)
+      : `${user.displayName.slice(0, maxLength)}…`
+
+  const name = trimmed || alias
 
   return { name, image }
 }

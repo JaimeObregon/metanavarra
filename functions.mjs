@@ -37,7 +37,8 @@ export const rooms = {
 }
 
 export function concat() {
-  const items = this.map((item) => `«${item}»`)
+  const items = this.map((item) => `«${item.replace(/[«»]/g, '"')}»`)
+
   if (items.length <= 1) {
     return items.toString()
   } else if (items.length === 2) {
@@ -57,9 +58,7 @@ export function pick() {
 // mención al usuario de Twitter @Fulano o un hashtag. Lo evitamos introduciendo
 // un espacio de ancho nulo tras la arroba. Ídem con los enlaces.
 export function escape() {
-  return this.replace(/([#@])/g, '$1\u200B')
-    .replace(/\.([a-z]+)/g, '\u200B.$1')
-    .replace(/[«»]/g, '"')
+  return this.replace(/([#@])/g, '$1\u200B').replace(/\.([a-z]+)/g, '\u200B.$1')
 }
 
 export const debug = (object) => {

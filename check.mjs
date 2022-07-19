@@ -32,6 +32,18 @@ const messages = {
       `Se ruega a los cero mil cerocientos cibernautas que están ahora mismo en ${rooms[room].long} que mantengan la distancia de seguridad. ${hour}.`,
     (room) =>
       `«La soledad es la suerte de todos los espíritus excelentes»\n— Arthur Schopenhauer.\n\nEntonces a mí me ha tocado la lotería, porque son las ${hour} y en ${rooms[room].long} del metaverso no hay nadie.`,
+    (room) =>
+      `«Comprender el vacío no es nada fácil»\n— Tenzin Gyatso.\n\nVamos, que es difícil comprender por qué a las ${hour} esto está vacío.`,
+    (room) =>
+      `«El espacio vacío, es decir un espacio sin campo, no existe»\n— Albert Einstein.\n\nSon las ${hour} y voy a dar un paseo al campo a ver si esto existe.`,
+    (room) =>
+      `«El vientre vacío no escucha con agrado las palabras»\n— Anónimo.\n\nSon las ${hour} y en ${rooms[room].long} del metaverso ni vientre, ni agrado, ni palabras.`,
+    (room) =>
+      `«La naturaleza aborrece el vacío» ('Natura abhorret vacuum').\n— René Descartes.\n\nSon las ${hour} y en ${rooms[room].long} del metaverso y no la veo, René tenía razón.`,
+    (room) =>
+      `«Ningún lugar de la vida es más triste que una cama vacía»\n— Gabriel García Márquez.\n\nSon las ${hour} y Gabito debería pasarse por ${rooms[room].long} del metaverso a repensar la frase.`,
+    (room) =>
+      `«Un hombre solo no está rodeado más que de vacío»\n— Efua Sutherland.\n\nSon las ${hour} y en ${rooms[room].long} del metaverso ese soy yo.`,
     (room) => `Estoy en ${rooms[room].long} y aquí no hay ni Perry. ${hour}.`,
     (room) => `🥱💤. Ni Blas en ${rooms[room].long} a las ${hour}.`,
     (room) =>

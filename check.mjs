@@ -39,7 +39,7 @@ const messages = {
     (room) =>
       `«El vientre vacío no escucha con agrado las palabras»\n— Anónimo.\n\nSon las ${hour} y en ${rooms[room].long} del metaverso ni vientre, ni agrado, ni palabras.`,
     (room) =>
-      `«La naturaleza aborrece el vacío» ('Natura abhorret vacuum').\n— René Descartes.\n\nSon las ${hour} y en ${rooms[room].long} del metaverso y no la veo, René tenía razón.`,
+      `«La naturaleza aborrece el vacío» ('Natura abhorret vacuum').\n— René Descartes.\n\nSon las ${hour} y en ${rooms[room].long} del metaverso no la veo. René tenía razón.`,
     (room) =>
       `«Ningún lugar de la vida es más triste que una cama vacía»\n— Gabriel García Márquez.\n\nSon las ${hour} y Gabito debería pasarse por ${rooms[room].long} del metaverso a repensar la frase.`,
     (room) =>

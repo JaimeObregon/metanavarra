@@ -1,0 +1,191 @@
+{
+  "rooms": [
+    {
+      "id": "6246b6964f7a930001a7636a",
+      "ownerID": "6242c206d3dd2500016583cb",
+      "owner": {
+        "userID": "6242c206d3dd2500016583cb",
+        "displayName": "Gobierno de Navarra"
+      },
+      "name": "ESPACIO GOBIERNO DE NAVARRA",
+      "slug": "ESPACIO-GOBIERNO-DE-NAVARRA",
+      "description": "",
+      "orgOwner": {
+        "id": "6242f0b97aeff10001025a0b",
+        "name": "GobiernoNavarra",
+        "subscription": {
+          "subscriptionType": "",
+          "subscriptionSource": "",
+          "isActive": false
+        }
+      },
+      "organizations": [
+        "6242f0b97aeff10001025a0b"
+      ],
+      "timeLastJoined": "0001-01-01T00:00:00Z",
+      "thumbnails": [],
+      "activeParticipants": [],
+      "polymerVersion": 19,
+      "roomThumbnails": {
+        "transientGetUrl": "https://sapi-room-thumbnails.s3.amazonaws.com/6246b6964f7a930001a7636a/transientStateThumbnail?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAVFTG5JZHD2BXED4V%2F20220918%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220918T112648Z&X-Amz-Expires=14400&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCwXpz7UJpzte7ZKPqvAuPX2q9sUHs44zDco%2BGEv%2BRKaQIgIBybXE9V7N6wTYz56Tt03JVCW9jKNup8tV5NQf7wVeIq7gQILBADGgwzNTU2MjQzNzM4MzgiDNexp9zQZNi27m%2F4ASrLBB9xkvgiD4Siy%2FZMe9kuF1tdTUYGrzHsiduvi5LRulJQtxCMOmw6MZJJp8ZHv3wb%2FeLHSr3e2WxN02fX0z6qTXVSZHkPbN0fkM%2F1ipkjBL8hzHCcN%2F9mHbXExP7bVvrj5Ql2IW0T6AB7Y5saZVtHI2ytGj%2BOXoM334OmfBFCXRWoZVDp%2FuzbXJb47RLi23TMxWYUtxpwYfllwspyh8%2BRe2TIxaBaWYema7wcPHqc8SfpHNgyOAu4boU4QF%2BxlwXsdvLcuKezVEr%2B7fdQYG%2FfoLGzb7ZVVdhVzyZ2JFz0%2BWDRquoin5y%2F0TvonODEzhd2WkJGR7iKfaaL57sRbFvD9AbBNbcEQhPwiEcmhNtJg2eDpGEWdoB0fJBp7jkae%2BlXu%2Bsu4bQOxWj8Ifd5YjJjz7Ip%2Fg04Vp5VnABzSiyE2yHLZWugHKH3hKjM5g%2BhvHC1aXmIlClvnJMM%2FPKJEdWSCSXRUPx4sabMSBOE4tRBu%2BZMd92766zyQxBQ5CdVwunMu85%2Bg01Eps8X2EAQtPn4g3%2B177a7f3G3hFwrWbqIPBqfXnjoatOCjxGwoSXBUqKn7yHTUcrcu5b8hi5nXlBdpnWmvcewd0sjOByHaj85WenpboE0Np1LbIM7KIBoNcUqh%2BpyjsyUIGbMaIEgwHMVPJNUEf5dyLZp5%2BwZDNOG%2BUmMEeqJMXuOHoS%2FHTFuq3e3PJ%2BK55BQtUA5%2BSQCcx6adPFJ1Eijqmqnu%2FGkVxQborgAsFaYNTGT1sLJmA2h5N%2BFEi9VhMgwvYtNRgBLMI3%2Bm5kGOpoBgQbeUlogrWKgLsg9uW%2FikUSfilwIBRICG6qVOpiFodR91ZB1RJWbGOd6hUZAXADEjspfV9T5zWsWPgvXwTMDYxXgtNmnJ2UU5UMthn6YoDZyUO%2FPUqkohbeqoQmDcuxKBQNFxUE0ixT6HHrSIEXZIoKIDRZShgsqOfWQEDJD8GNCV2UQE3rb4T53GOScxlhKx36H%2FBVHX8dWFg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=2a1e83ec105451c61605f9acf556630ceb345101808e087e1fa0b2d1c9bdb2e5",
+        "persistentGetUrl": "https://sapi-room-thumbnails.s3.amazonaws.com/6246b6964f7a930001a7636a/persistentStateThumbnail?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAVFTG5JZHD2BXED4V%2F20220918%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220918T112648Z&X-Amz-Expires=14400&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCwXpz7UJpzte7ZKPqvAuPX2q9sUHs44zDco%2BGEv%2BRKaQIgIBybXE9V7N6wTYz56Tt03JVCW9jKNup8tV5NQf7wVeIq7gQILBADGgwzNTU2MjQzNzM4MzgiDNexp9zQZNi27m%2F4ASrLBB9xkvgiD4Siy%2FZMe9kuF1tdTUYGrzHsiduvi5LRulJQtxCMOmw6MZJJp8ZHv3wb%2FeLHSr3e2WxN02fX0z6qTXVSZHkPbN0fkM%2F1ipkjBL8hzHCcN%2F9mHbXExP7bVvrj5Ql2IW0T6AB7Y5saZVtHI2ytGj%2BOXoM334OmfBFCXRWoZVDp%2FuzbXJb47RLi23TMxWYUtxpwYfllwspyh8%2BRe2TIxaBaWYema7wcPHqc8SfpHNgyOAu4boU4QF%2BxlwXsdvLcuKezVEr%2B7fdQYG%2FfoLGzb7ZVVdhVzyZ2JFz0%2BWDRquoin5y%2F0TvonODEzhd2WkJGR7iKfaaL57sRbFvD9AbBNbcEQhPwiEcmhNtJg2eDpGEWdoB0fJBp7jkae%2BlXu%2Bsu4bQOxWj8Ifd5YjJjz7Ip%2Fg04Vp5VnABzSiyE2yHLZWugHKH3hKjM5g%2BhvHC1aXmIlClvnJMM%2FPKJEdWSCSXRUPx4sabMSBOE4tRBu%2BZMd92766zyQxBQ5CdVwunMu85%2Bg01Eps8X2EAQtPn4g3%2B177a7f3G3hFwrWbqIPBqfXnjoatOCjxGwoSXBUqKn7yHTUcrcu5b8hi5nXlBdpnWmvcewd0sjOByHaj85WenpboE0Np1LbIM7KIBoNcUqh%2BpyjsyUIGbMaIEgwHMVPJNUEf5dyLZp5%2BwZDNOG%2BUmMEeqJMXuOHoS%2FHTFuq3e3PJ%2BK55BQtUA5%2BSQCcx6adPFJ1Eijqmqnu%2FGkVxQborgAsFaYNTGT1sLJmA2h5N%2BFEi9VhMgwvYtNRgBLMI3%2Bm5kGOpoBgQbeUlogrWKgLsg9uW%2FikUSfilwIBRICG6qVOpiFodR91ZB1RJWbGOd6hUZAXADEjspfV9T5zWsWPgvXwTMDYxXgtNmnJ2UU5UMthn6YoDZyUO%2FPUqkohbeqoQmDcuxKBQNFxUE0ixT6HHrSIEXZIoKIDRZShgsqOfWQEDJD8GNCV2UQE3rb4T53GOScxlhKx36H%2FBVHX8dWFg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=147ed015d6b64655859339b3e9fba13ec686917fbb7a3d2fd1c201b183896f02",
+        "cubemapGetUrl": "https://sapi-room-thumbnails.s3.amazonaws.com/6246b6964f7a930001a7636a/cubemap?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAVFTG5JZHD2BXED4V%2F20220918%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220918T112648Z&X-Amz-Expires=14400&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCwXpz7UJpzte7ZKPqvAuPX2q9sUHs44zDco%2BGEv%2BRKaQIgIBybXE9V7N6wTYz56Tt03JVCW9jKNup8tV5NQf7wVeIq7gQILBADGgwzNTU2MjQzNzM4MzgiDNexp9zQZNi27m%2F4ASrLBB9xkvgiD4Siy%2FZMe9kuF1tdTUYGrzHsiduvi5LRulJQtxCMOmw6MZJJp8ZHv3wb%2FeLHSr3e2WxN02fX0z6qTXVSZHkPbN0fkM%2F1ipkjBL8hzHCcN%2F9mHbXExP7bVvrj5Ql2IW0T6AB7Y5saZVtHI2ytGj%2BOXoM334OmfBFCXRWoZVDp%2FuzbXJb47RLi23TMxWYUtxpwYfllwspyh8%2BRe2TIxaBaWYema7wcPHqc8SfpHNgyOAu4boU4QF%2BxlwXsdvLcuKezVEr%2B7fdQYG%2FfoLGzb7ZVVdhVzyZ2JFz0%2BWDRquoin5y%2F0TvonODEzhd2WkJGR7iKfaaL57sRbFvD9AbBNbcEQhPwiEcmhNtJg2eDpGEWdoB0fJBp7jkae%2BlXu%2Bsu4bQOxWj8Ifd5YjJjz7Ip%2Fg04Vp5VnABzSiyE2yHLZWugHKH3hKjM5g%2BhvHC1aXmIlClvnJMM%2FPKJEdWSCSXRUPx4sabMSBOE4tRBu%2BZMd92766zyQxBQ5CdVwunMu85%2Bg01Eps8X2EAQtPn4g3%2B177a7f3G3hFwrWbqIPBqfXnjoatOCjxGwoSXBUqKn7yHTUcrcu5b8hi5nXlBdpnWmvcewd0sjOByHaj85WenpboE0Np1LbIM7KIBoNcUqh%2BpyjsyUIGbMaIEgwHMVPJNUEf5dyLZp5%2BwZDNOG%2BUmMEeqJMXuOHoS%2FHTFuq3e3PJ%2BK55BQtUA5%2BSQCcx6adPFJ1Eijqmqnu%2FGkVxQborgAsFaYNTGT1sLJmA2h5N%2BFEi9VhMgwvYtNRgBLMI3%2Bm5kGOpoBgQbeUlogrWKgLsg9uW%2FikUSfilwIBRICG6qVOpiFodR91ZB1RJWbGOd6hUZAXADEjspfV9T5zWsWPgvXwTMDYxXgtNmnJ2UU5UMthn6YoDZyUO%2FPUqkohbeqoQmDcuxKBQNFxUE0ixT6HHrSIEXZIoKIDRZShgsqOfWQEDJD8GNCV2UQE3rb4T53GOScxlhKx36H%2FBVHX8dWFg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=8582543058856c8e4ac56c3b83ba025b0ab62dad369961bcbf362710b2703a06",
+        "expiresAt": 1663514808000
+      },
+      "starred": true,
+      "shareID": "4069560728893578203",
+      "code": "",
+      "shareSetting": "ORG",
+      "publicLink": true,
+      "roomAdmins": [
+        "61b21d6bc92b1b000110003c",
+        "5f72ee5afa7f116d57153fee"
+      ],
+      "restrictedPermissions": [
+        "RESTRICT_OTHERS_VIEW_ONLY"
+      ],
+      "directlyInvitedGuests": {
+        "629656a39f1aff0001db2580": {
+          "id": "629656a39f1aff0001db2580",
+          "displayName": "Iñaki Agirre",
+          "email": "inaki.agirre@gmail.com",
+          "profilePicURL": "https://renderapi.s3.amazonaws.com/87yXILJxq.png",
+          "avatarData": {
+            "avatarUserID": "a48466f7-52be-4dfb-b64f-39b73f71b583",
+            "avatarID": "db67973c-4319-4e81-903d-eca5a9879a51",
+            "avatarBody": "https://dd2cgqlmnwvp5.cloudfront.net/avatar_generic_bodies/rpm_male_tshirt/model.glb",
+            "filename": "",
+            "skinColorOverride": "",
+            "shirtColorOverride": "",
+            "readyPlayerMeThumbnails": {
+              "upperBody": "https://renderapi.s3.amazonaws.com/87yXILJxq.png",
+              "lowerBody": ""
+            },
+            "readyPlayerMeUrl": "https://d1a370nemizbjq.cloudfront.net/b3be43a0-272b-4d38-b059-bf4db70a96c6.glb",
+            "ReadyPlayerMeUrlLastUpdated": "0001-01-01T00:00:00Z",
+            "readyPlayerMeUrlCrunched": "",
+            "readyPlayerMeUrlCrunchedBrotli": "",
+            "ReadyPlayerMeUrlCrunchedLastUpdated": "0001-01-01T00:00:00Z",
+            "activeAvatarStyle": "READY_PLAYER_ME"
+          },
+          "appearanceCustomization": {
+            "profileColor": "teal"
+          },
+          "accountCompletionStatus": "COMPLETE",
+          "playerColor": "teal"
+        }
+      },
+      "lobbyType": "",
+      "published": false,
+      "defaultRoomContent": null,
+      "accessible": true,
+      "createdAt": "2022-04-01T08:23:50.26Z",
+      "isNFTSpace": false,
+      "directlyInvitedGuestsArray": [
+        {
+          "id": "629656a39f1aff0001db2580",
+          "displayName": "Iñaki Agirre",
+          "email": "inaki.agirre@gmail.com",
+          "profilePicURL": "https://renderapi.s3.amazonaws.com/87yXILJxq.png",
+          "avatarData": {
+            "avatarUserID": "a48466f7-52be-4dfb-b64f-39b73f71b583",
+            "avatarID": "db67973c-4319-4e81-903d-eca5a9879a51",
+            "avatarBody": "https://dd2cgqlmnwvp5.cloudfront.net/avatar_generic_bodies/rpm_male_tshirt/model.glb",
+            "filename": "",
+            "skinColorOverride": "",
+            "shirtColorOverride": "",
+            "readyPlayerMeThumbnails": {
+              "upperBody": "https://renderapi.s3.amazonaws.com/87yXILJxq.png",
+              "lowerBody": ""
+            },
+            "readyPlayerMeUrl": "https://d1a370nemizbjq.cloudfront.net/b3be43a0-272b-4d38-b059-bf4db70a96c6.glb",
+            "ReadyPlayerMeUrlLastUpdated": "0001-01-01T00:00:00Z",
+            "readyPlayerMeUrlCrunched": "",
+            "readyPlayerMeUrlCrunchedBrotli": "",
+            "ReadyPlayerMeUrlCrunchedLastUpdated": "0001-01-01T00:00:00Z",
+            "activeAvatarStyle": "READY_PLAYER_ME"
+          },
+          "appearanceCustomization": {
+            "profileColor": "teal"
+          },
+          "accountCompletionStatus": "COMPLETE",
+          "playerColor": "teal"
+        }
+      ],
+      "active": false,
+      "users": [],
+      "activeParticipantCount": 0,
+      "likes": 10,
+      "views": 3817,
+      "isInstanceable": false,
+      "likedSpace": false,
+      "promoted": false,
+      "lastPromoted": "0001-01-01T00:00:00Z"
+    },
+    {
+      "id": "6246b7064f7a930001a76375",
+      "ownerID": "6242c206d3dd2500016583cb",
+      "owner": {
+        "userID": "6242c206d3dd2500016583cb",
+        "displayName": "Gobierno de Navarra"
+      },
+      "name": "AUDITORIO GOBIERNO DE NAVARRA",
+      "slug": "AUDITORIO-GOBIERNO-DE-NAVARRA",
+      "description": "",
+      "orgOwner": {
+        "id": "6242f0b97aeff10001025a0b",
+        "name": "GobiernoNavarra",
+        "subscription": {
+          "subscriptionType": "",
+          "subscriptionSource": "",
+          "isActive": false
+        }
+      },
+      "organizations": [
+        "6242f0b97aeff10001025a0b"
+      ],
+      "timeLastJoined": "0001-01-01T00:00:00Z",
+      "thumbnails": [],
+      "activeParticipants": [],
+      "polymerVersion": 19,
+      "roomThumbnails": {
+        "transientGetUrl": "https://sapi-room-thumbnails.s3.amazonaws.com/6246b7064f7a930001a76375/transientStateThumbnail?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAVFTG5JZHD2BXED4V%2F20220918%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220918T112648Z&X-Amz-Expires=14400&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCwXpz7UJpzte7ZKPqvAuPX2q9sUHs44zDco%2BGEv%2BRKaQIgIBybXE9V7N6wTYz56Tt03JVCW9jKNup8tV5NQf7wVeIq7gQILBADGgwzNTU2MjQzNzM4MzgiDNexp9zQZNi27m%2F4ASrLBB9xkvgiD4Siy%2FZMe9kuF1tdTUYGrzHsiduvi5LRulJQtxCMOmw6MZJJp8ZHv3wb%2FeLHSr3e2WxN02fX0z6qTXVSZHkPbN0fkM%2F1ipkjBL8hzHCcN%2F9mHbXExP7bVvrj5Ql2IW0T6AB7Y5saZVtHI2ytGj%2BOXoM334OmfBFCXRWoZVDp%2FuzbXJb47RLi23TMxWYUtxpwYfllwspyh8%2BRe2TIxaBaWYema7wcPHqc8SfpHNgyOAu4boU4QF%2BxlwXsdvLcuKezVEr%2B7fdQYG%2FfoLGzb7ZVVdhVzyZ2JFz0%2BWDRquoin5y%2F0TvonODEzhd2WkJGR7iKfaaL57sRbFvD9AbBNbcEQhPwiEcmhNtJg2eDpGEWdoB0fJBp7jkae%2BlXu%2Bsu4bQOxWj8Ifd5YjJjz7Ip%2Fg04Vp5VnABzSiyE2yHLZWugHKH3hKjM5g%2BhvHC1aXmIlClvnJMM%2FPKJEdWSCSXRUPx4sabMSBOE4tRBu%2BZMd92766zyQxBQ5CdVwunMu85%2Bg01Eps8X2EAQtPn4g3%2B177a7f3G3hFwrWbqIPBqfXnjoatOCjxGwoSXBUqKn7yHTUcrcu5b8hi5nXlBdpnWmvcewd0sjOByHaj85WenpboE0Np1LbIM7KIBoNcUqh%2BpyjsyUIGbMaIEgwHMVPJNUEf5dyLZp5%2BwZDNOG%2BUmMEeqJMXuOHoS%2FHTFuq3e3PJ%2BK55BQtUA5%2BSQCcx6adPFJ1Eijqmqnu%2FGkVxQborgAsFaYNTGT1sLJmA2h5N%2BFEi9VhMgwvYtNRgBLMI3%2Bm5kGOpoBgQbeUlogrWKgLsg9uW%2FikUSfilwIBRICG6qVOpiFodR91ZB1RJWbGOd6hUZAXADEjspfV9T5zWsWPgvXwTMDYxXgtNmnJ2UU5UMthn6YoDZyUO%2FPUqkohbeqoQmDcuxKBQNFxUE0ixT6HHrSIEXZIoKIDRZShgsqOfWQEDJD8GNCV2UQE3rb4T53GOScxlhKx36H%2FBVHX8dWFg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d34082a826fb237be7d285ccfe642df05ef7d5b9dc7039fdab4aa6f973533575",
+        "persistentGetUrl": "https://sapi-room-thumbnails.s3.amazonaws.com/6246b7064f7a930001a76375/persistentStateThumbnail?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAVFTG5JZHD2BXED4V%2F20220918%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220918T112648Z&X-Amz-Expires=14400&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCwXpz7UJpzte7ZKPqvAuPX2q9sUHs44zDco%2BGEv%2BRKaQIgIBybXE9V7N6wTYz56Tt03JVCW9jKNup8tV5NQf7wVeIq7gQILBADGgwzNTU2MjQzNzM4MzgiDNexp9zQZNi27m%2F4ASrLBB9xkvgiD4Siy%2FZMe9kuF1tdTUYGrzHsiduvi5LRulJQtxCMOmw6MZJJp8ZHv3wb%2FeLHSr3e2WxN02fX0z6qTXVSZHkPbN0fkM%2F1ipkjBL8hzHCcN%2F9mHbXExP7bVvrj5Ql2IW0T6AB7Y5saZVtHI2ytGj%2BOXoM334OmfBFCXRWoZVDp%2FuzbXJb47RLi23TMxWYUtxpwYfllwspyh8%2BRe2TIxaBaWYema7wcPHqc8SfpHNgyOAu4boU4QF%2BxlwXsdvLcuKezVEr%2B7fdQYG%2FfoLGzb7ZVVdhVzyZ2JFz0%2BWDRquoin5y%2F0TvonODEzhd2WkJGR7iKfaaL57sRbFvD9AbBNbcEQhPwiEcmhNtJg2eDpGEWdoB0fJBp7jkae%2BlXu%2Bsu4bQOxWj8Ifd5YjJjz7Ip%2Fg04Vp5VnABzSiyE2yHLZWugHKH3hKjM5g%2BhvHC1aXmIlClvnJMM%2FPKJEdWSCSXRUPx4sabMSBOE4tRBu%2BZMd92766zyQxBQ5CdVwunMu85%2Bg01Eps8X2EAQtPn4g3%2B177a7f3G3hFwrWbqIPBqfXnjoatOCjxGwoSXBUqKn7yHTUcrcu5b8hi5nXlBdpnWmvcewd0sjOByHaj85WenpboE0Np1LbIM7KIBoNcUqh%2BpyjsyUIGbMaIEgwHMVPJNUEf5dyLZp5%2BwZDNOG%2BUmMEeqJMXuOHoS%2FHTFuq3e3PJ%2BK55BQtUA5%2BSQCcx6adPFJ1Eijqmqnu%2FGkVxQborgAsFaYNTGT1sLJmA2h5N%2BFEi9VhMgwvYtNRgBLMI3%2Bm5kGOpoBgQbeUlogrWKgLsg9uW%2FikUSfilwIBRICG6qVOpiFodR91ZB1RJWbGOd6hUZAXADEjspfV9T5zWsWPgvXwTMDYxXgtNmnJ2UU5UMthn6YoDZyUO%2FPUqkohbeqoQmDcuxKBQNFxUE0ixT6HHrSIEXZIoKIDRZShgsqOfWQEDJD8GNCV2UQE3rb4T53GOScxlhKx36H%2FBVHX8dWFg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=5c1cdb98e7240a65cc1f03721b824c5a82b254957623202574fae287f4cb61ad",
+        "cubemapGetUrl": "https://sapi-room-thumbnails.s3.amazonaws.com/6246b7064f7a930001a76375/cubemap?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAVFTG5JZHD2BXED4V%2F20220918%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220918T112648Z&X-Amz-Expires=14400&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCwXpz7UJpzte7ZKPqvAuPX2q9sUHs44zDco%2BGEv%2BRKaQIgIBybXE9V7N6wTYz56Tt03JVCW9jKNup8tV5NQf7wVeIq7gQILBADGgwzNTU2MjQzNzM4MzgiDNexp9zQZNi27m%2F4ASrLBB9xkvgiD4Siy%2FZMe9kuF1tdTUYGrzHsiduvi5LRulJQtxCMOmw6MZJJp8ZHv3wb%2FeLHSr3e2WxN02fX0z6qTXVSZHkPbN0fkM%2F1ipkjBL8hzHCcN%2F9mHbXExP7bVvrj5Ql2IW0T6AB7Y5saZVtHI2ytGj%2BOXoM334OmfBFCXRWoZVDp%2FuzbXJb47RLi23TMxWYUtxpwYfllwspyh8%2BRe2TIxaBaWYema7wcPHqc8SfpHNgyOAu4boU4QF%2BxlwXsdvLcuKezVEr%2B7fdQYG%2FfoLGzb7ZVVdhVzyZ2JFz0%2BWDRquoin5y%2F0TvonODEzhd2WkJGR7iKfaaL57sRbFvD9AbBNbcEQhPwiEcmhNtJg2eDpGEWdoB0fJBp7jkae%2BlXu%2Bsu4bQOxWj8Ifd5YjJjz7Ip%2Fg04Vp5VnABzSiyE2yHLZWugHKH3hKjM5g%2BhvHC1aXmIlClvnJMM%2FPKJEdWSCSXRUPx4sabMSBOE4tRBu%2BZMd92766zyQxBQ5CdVwunMu85%2Bg01Eps8X2EAQtPn4g3%2B177a7f3G3hFwrWbqIPBqfXnjoatOCjxGwoSXBUqKn7yHTUcrcu5b8hi5nXlBdpnWmvcewd0sjOByHaj85WenpboE0Np1LbIM7KIBoNcUqh%2BpyjsyUIGbMaIEgwHMVPJNUEf5dyLZp5%2BwZDNOG%2BUmMEeqJMXuOHoS%2FHTFuq3e3PJ%2BK55BQtUA5%2BSQCcx6adPFJ1Eijqmqnu%2FGkVxQborgAsFaYNTGT1sLJmA2h5N%2BFEi9VhMgwvYtNRgBLMI3%2Bm5kGOpoBgQbeUlogrWKgLsg9uW%2FikUSfilwIBRICG6qVOpiFodR91ZB1RJWbGOd6hUZAXADEjspfV9T5zWsWPgvXwTMDYxXgtNmnJ2UU5UMthn6YoDZyUO%2FPUqkohbeqoQmDcuxKBQNFxUE0ixT6HHrSIEXZIoKIDRZShgsqOfWQEDJD8GNCV2UQE3rb4T53GOScxlhKx36H%2FBVHX8dWFg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=784700c46306564f340596623574811c3015f880d65febc08a8cd719633938fa",
+        "expiresAt": 1663514808000
+      },
+      "starred": true,
+      "shareID": "5152266806103099508",
+      "code": "",
+      "shareSetting": "PRIVATE",
+      "publicLink": true,
+      "roomAdmins": [
+        "61b21d6bc92b1b000110003c",
+        "61af925bc9bee600014349af"
+      ],
+      "restrictedPermissions": [
+        "RESTRICT_OTHERS_VIEW_ONLY"
+      ],
+      "directlyInvitedGuests": {},
+      "lobbyType": "",
+      "published": false,
+      "defaultRoomContent": null,
+      "accessible": true,
+      "createdAt": "2022-04-01T08:25:42.041Z",
+      "isNFTSpace": false,
+      "directlyInvitedGuestsArray": [],
+      "active": false,
+      "users": [],
+      "activeParticipantCount": 0,
+      "likes": 1,
+      "views": 1561,
+      "isInstanceable": false,
+      "likedSpace": false,
+      "promoted": false,
+      "lastPromoted": "0001-01-01T00:00:00Z"
+    }
+  ],
+  "paging": {
+    "total": 2
+  }
+}

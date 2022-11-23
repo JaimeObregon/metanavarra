@@ -52,6 +52,20 @@ const messages = {
       `«A mis soledades voy\nde mis soledades vengo,\nporque para andar conmigo\nme bastan mis pensamientos».\n— Lope de Vega, desde el metaverso.\nSon las ${hour} y ${rooms[room].long} está lleno de… metavacío.`,
     (room) =>
       `🎵 Ella despidió a su amooor\nEl partió en un barco\nen el muelle de San Blaaas 🎶\nEl juró que volvería…\n🎶 Y empapada en llanto,\nella juró que esperaría…\nMiles de lunas pasaron 🎵\nY siempre ella estaba en el muelle,\nesperandoooo… 🎶🎵\n\nAsí estoy yo en el Metaverso: solo y esperando a las ${hour} en ${rooms[room].long}…`,
+    (room) =>
+      `Capricornio: Esta noche una visita inesperada te sorprenderá.\n\nUna pena que ${rooms[room].long} no sea Capricornio, porque aquí sigue sin haber nadie.`,
+    (room) =>
+      `Nadie:\n\nPero nadie, nadie:\n\nAbsolutamente nadie:\n\nNo, no estoy haciendo el meme. Es la gente que hay a las ${hour} ${rooms[room].in}.`,
+    (room) =>
+      `—Nos vemos a las ${hour} ${rooms[room].in}.\n—¿Cómo te reconoceré?\n—Fácil: Seré la única persona que esté allí.`,
+    (room) =>
+      `La Paradoja de Fermi expresa la contradicción entre dos hechos:\n1. El Universo posee, con toda probabilidad, un número incontable de civilizaciones avanzadas tecnológicamente.\n2. Y, sin embargo, ninguna de ellas está visitando ${rooms[room].long} a las ${hour}.`,
+    (room) =>
+      `¿Os habéis dado cuenta de que cada vez más premios literarios quedan desiertos?\nEsto es un claro homenaje a ${rooms[room].long}, que a las ${hour} está, pues eso, ídem.`,
+    (room) =>
+      `Son las ${hour} y ${rooms[room].long} tiene menos movimiento que el diccionario de sinónimos y antónimos de Hodor.`,
+    (room) =>
+      `La historia del número cero es curiosísima. Apareció como concepto en diversos momentos y culturas a lo largo de los siglos.\nEs como si todas aquellas civilizaciones pudiesen predecir el número de personas que habría ${rooms[room].in} a las ${hour}.`,  
   ],
   entered: [
     (users, room) =>

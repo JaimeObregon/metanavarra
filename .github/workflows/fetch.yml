@@ -1,12 +1,12 @@
 name: De paseo por el metaverso más foral
 
 on:
-#   push:
-#     paths:
-#       - '**.mjs'
-#       - '**.yml'
-#   schedule:
-#     - cron: '*/5 * * * *'
+  push:
+    paths:
+      - '**.mjs'
+      - '**.yml'
+  schedule:
+    - cron: '*/5 * * * *'
 
 jobs:
   check:

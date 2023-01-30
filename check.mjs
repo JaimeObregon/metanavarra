@@ -32,6 +32,18 @@ const messages = {
       `Se ruega a los cero mil cerocientos cibernautas que están ahora mismo en ${rooms[room].long} que mantengan la distancia de seguridad. ${hour}.`,
     (room) =>
       `«La soledad es la suerte de todos los espíritus excelentes»\n— Arthur Schopenhauer.\n\nEntonces a mí me ha tocado la lotería, porque son las ${hour} y en ${rooms[room].long} del metaverso no hay nadie.`,
+    (room) =>
+      `«Comprender el vacío no es nada fácil»\n— Tenzin Gyatso.\n\nVamos, que es difícil comprender por qué a las ${hour} esto está vacío.`,
+    (room) =>
+      `«El espacio vacío, es decir un espacio sin campo, no existe»\n— Albert Einstein.\n\nSon las ${hour} y voy a dar un paseo al campo a ver si esto existe.`,
+    (room) =>
+      `«El vientre vacío no escucha con agrado las palabras»\n— Anónimo.\n\nSon las ${hour} y en ${rooms[room].long} del metaverso ni vientre, ni agrado, ni palabras.`,
+    (room) =>
+      `«La naturaleza aborrece el vacío» ('Natura abhorret vacuum').\n— René Descartes.\n\nSon las ${hour} y en ${rooms[room].long} del metaverso no la veo. René tenía razón.`,
+    (room) =>
+      `«Ningún lugar de la vida es más triste que una cama vacía»\n— Gabriel García Márquez.\n\nSon las ${hour} y Gabito debería pasarse por ${rooms[room].long} del metaverso a repensar la frase.`,
+    (room) =>
+      `«Un hombre solo no está rodeado más que de vacío»\n— Efua Sutherland.\n\nSon las ${hour} y en ${rooms[room].long} del metaverso ese soy yo.`,
     (room) => `Estoy en ${rooms[room].long} y aquí no hay ni Perry. ${hour}.`,
     (room) => `🥱💤. Ni Blas en ${rooms[room].long} a las ${hour}.`,
     (room) =>
@@ -40,6 +52,20 @@ const messages = {
       `«A mis soledades voy\nde mis soledades vengo,\nporque para andar conmigo\nme bastan mis pensamientos».\n— Lope de Vega, desde el metaverso.\nSon las ${hour} y ${rooms[room].long} está lleno de… metavacío.`,
     (room) =>
       `🎵 Ella despidió a su amooor\nEl partió en un barco\nen el muelle de San Blaaas 🎶\nEl juró que volvería…\n🎶 Y empapada en llanto,\nella juró que esperaría…\nMiles de lunas pasaron 🎵\nY siempre ella estaba en el muelle,\nesperandoooo… 🎶🎵\n\nAsí estoy yo en el Metaverso: solo y esperando a las ${hour} en ${rooms[room].long}…`,
+    (room) =>
+      `Capricornio: Esta noche una visita inesperada te sorprenderá.\n\nUna pena que ${rooms[room].long} no sea Capricornio, porque aquí sigue sin haber nadie.`,
+    (room) =>
+      `Nadie:\n\nPero nadie, nadie:\n\nAbsolutamente nadie:\n\nNo, no estoy haciendo el meme. Es la gente que hay a las ${hour} ${rooms[room].in}.`,
+    (room) =>
+      `—Nos vemos a las ${hour} ${rooms[room].in}.\n—¿Cómo te reconoceré?\n—Fácil: Seré la única persona que esté allí.`,
+    (room) =>
+      `La Paradoja de Fermi expresa la contradicción entre dos hechos:\n1. El Universo posee, con toda probabilidad, un número incontable de civilizaciones avanzadas tecnológicamente.\n2. Y, sin embargo, ninguna de ellas está visitando ${rooms[room].long} a las ${hour}.`,
+    (room) =>
+      `¿Os habéis dado cuenta de que cada vez más premios literarios quedan desiertos?\nEsto es un claro homenaje a ${rooms[room].long}, que a las ${hour} está, pues eso, ídem.`,
+    (room) =>
+      `Son las ${hour} y ${rooms[room].long} tiene menos movimiento que el diccionario de sinónimos y antónimos de Hodor.`,
+    (room) =>
+      `La historia del número cero es curiosísima. Apareció como concepto en diversos momentos y culturas a lo largo de los siglos.\nEs como si todas aquellas civilizaciones pudiesen predecir el número de personas que habría ${rooms[room].in} a las ${hour}.`,  
   ],
   entered: [
     (users, room) =>
